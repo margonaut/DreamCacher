@@ -1,0 +1,14 @@
+<%= form_for @dream do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :text, "Dream" %>
+  <%= f.text_field :text %>
+
+	<%= f.label :date %>
+
+  <input type="text" value="<%= Date.today.strftime("%m/%d/%Y") %>" data-date-format="mm/dd/yyyy" id="datepicker" >
+
+  <%= f.submit "Add Dream" %>
+  <% end %>

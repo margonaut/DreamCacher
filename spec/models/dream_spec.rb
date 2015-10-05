@@ -24,6 +24,8 @@ describe Dream do
   it { should_not have_valid(:sentiment).when('1.1') }
   it { should_not have_valid(:sentiment).when('-5') }
 
+  it { should have_valid(:date).when('1991-01-27') }
+
 
 
 end
