@@ -1,5 +1,9 @@
 class DreamsController < ApplicationController
 
+  def index
+    @dreams = Dream.all
+  end
+
   def new
     @dream = Dream.new
   end
@@ -7,6 +11,7 @@ class DreamsController < ApplicationController
   def create
     @dream = Dream.new(dream_params)
     binding.pry
+    @dream.sentiment = @dream.get_sentiment
     if @dream.save
       flash[:notice] = "Dream saved"
       redirect_to dreams_path
