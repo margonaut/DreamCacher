@@ -10,7 +10,6 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-    binding.pry
     @dream.sentiment = @dream.get_sentiment
     if @dream.save
       flash[:notice] = "Dream saved"

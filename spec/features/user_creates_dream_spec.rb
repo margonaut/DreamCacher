@@ -20,14 +20,18 @@ feature 'user adds a dream', %(
     expect(page).to have_content("New Dream")
   end
 
-  scenario 'User visits the new dream page' do
+  scenario 'User adds valid dream' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+
     visit new_dream_path
     dream = FactoryGirl.create(:dream)
 
     fill_in "Title", with: "Womp"
     fill_in "Dream", with: dream.text
-    save_and_open_page
-    fill_in "dream_date", with: dream.date
+    fill_in "dream_date", with: "10/01/2015"
+
+    click_button "Add Dream"
 
     expect(page).to have_content(dream.title)
     expect(page).to have_content(dream.text)
