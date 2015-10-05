@@ -16,4 +16,4 @@
 /coverage
 
 # Ignore API key
-api_key
+.txt
