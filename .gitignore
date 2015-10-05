@@ -12,6 +12,8 @@
 !/log/.keep
 /tmp
 
-#Ignore coveralls
-
+# Ignore coveralls
 /coverage
+
+# Ignore API key
+api_key
