@@ -1,7 +1,7 @@
 $(function () {
 	window.prettyPrint && prettyPrint();
-	$('#datepicker').fdatepicker({
-		format: 'mm-dd-yyyy',
+	$('#dream_date').fdatepicker({
+		format: 'mm/dd/yyyy',
 		disableDblClickSelection: false
 	});
 });

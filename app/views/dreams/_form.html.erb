@@ -7,8 +7,8 @@
   <%= f.text_field :text %>
 
 	<%= f.label :date %>
-
-  <input type="text" value="<%= Date.today.strftime("%m/%d/%Y") %>" data-date-format="mm/dd/yyyy" id="datepicker" >
+  <%= f.text_field :date %>
+  <!-- <input type="text" name="dream[date]" value="<%= Date.today.strftime("%m-%d-%Y") %>" id="datepicker" > -->
 
   <%= f.submit "Add Dream" %>
   <% end %>
