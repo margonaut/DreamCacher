@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20151005141505) do
 
   create_table "dreams", force: :cascade do |t|
     t.string   "title"
-    t.text     "text",       null: false
-    t.string   "sentiment",  null: false
-    t.date     "date",       null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "text",                     null: false
+    t.string   "sentiment",  default: "0"
+    t.date     "date",                     null: false
+    t.integer  "user_id",                  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "users", force: :cascade do |t|

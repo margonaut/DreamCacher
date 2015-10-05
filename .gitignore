@@ -11,3 +11,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore coveralls
+/coverage
+
+# Ignore API key
+*.txt
+.env

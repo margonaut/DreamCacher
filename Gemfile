@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'foundation-rails'
+gem 'json'
 
 
 
@@ -20,6 +21,10 @@ gem 'foundation-rails'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 group :development do

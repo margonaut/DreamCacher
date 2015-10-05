@@ -1,0 +1,7 @@
+<% @dreams.each do |dream| %>
+  <p><strong><%= dream.title %></strong></p>
+  <p><%= dream.text %></p>
+  <p><%= dream.sentiment %></p>
+<% end %>
+
+<%= link_to "New Dream", new_dream_path %>

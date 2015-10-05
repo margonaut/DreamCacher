@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'dreams#index'
+
+  resources :dreams, only: [:index, :create, :new, :update, :edit, :destroy]
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
