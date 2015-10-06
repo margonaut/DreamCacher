@@ -11,20 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151005141505) do
+ActiveRecord::Schema.define(version: 20151006175228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dreams", force: :cascade do |t|
     t.string   "title"
-    t.text     "text",                     null: false
+    t.text     "text",                       null: false
     t.string   "sentiment",  default: "0"
-    t.date     "date",                     null: false
-    t.integer  "user_id",                  null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.date     "date",                       null: false
+    t.integer  "user_id",                    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "mixed",      default: false
   end
+
+  create_table "dreams_keywords", force: :cascade do |t|
+    t.integer  "dream_id",                   null: false
+    t.integer  "keyword_id",                 null: false
+    t.string   "relevance",                  null: false
+    t.string   "sentiment",  default: "0"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "mixed",      default: false
+  end
+
+  add_index "dreams_keywords", ["dream_id", "keyword_id"], name: "index_dreams_keywords_on_dream_id_and_keyword_id", unique: true, using: :btree
+
+  create_table "keywords", force: :cascade do |t|
+    t.string   "text",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "keywords", ["text"], name: "index_keywords_on_text", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
