@@ -2,7 +2,8 @@ Dream Journal
 <% @dreams.each do |dream| %>
   <p><strong><%= dream.title %></strong></p>
   <p><%= dream.text %></p>
-  <p><%= dream.sentiment %></p>
+  <p><%= dream.sentiment %>, <%= dream.date.strftime("%m/%d/%Y") %></p>
+  <%= link_to "Edit", edit_dream_path(dream) %>
 <% end %>
 
 <%= link_to "New Dream", new_dream_path %>

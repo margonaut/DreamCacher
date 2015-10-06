@@ -43,6 +43,7 @@ class DreamsController < ApplicationController
       user: current_user
       )
     date = Date.strptime(dream_params["date"], '%m/%d/%Y')
+    # date = Date.parse(dream_params["date"])
     dream_params["date"] = date
     dream_params
   end

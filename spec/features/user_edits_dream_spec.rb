@@ -35,9 +35,23 @@ feature 'user edits a dream', %(
     fill_in "Dream", with: "This is the new dream description"
     fill_in "dream_date", with: "10/15/2015"
 
-    click_button "Submit"
+    click_button "Update"
 
     expect(page).to have_content("Tester tester")
     expect(page).to have_content("Dream Journal")
+  end
+
+  scenario 'with invalid information' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+    dream = create_dream(user)
+
+    visit edit_dream_path(dream)
+
+    fill_in "Dream", with: ""
+
+    click_button "Update"
+
+    expect(page).to have_content("Text can't be blank")
   end
 end
