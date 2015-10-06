@@ -38,6 +38,7 @@ class DreamsController < ApplicationController
   end
 
   private
+  
   def dream_params
     dream_params = params.require(:dream).permit(:title, :text, :date).merge(
       user: current_user
