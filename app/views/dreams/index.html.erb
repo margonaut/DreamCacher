@@ -1,9 +1,25 @@
 Dream Journal
-<% @dreams.each do |dream| %>
-  <p><strong><%= dream.title %></strong></p>
-  <p><%= dream.text %></p>
-  <p><%= dream.sentiment %>, <%= dream.date.strftime("%m/%d/%Y") %></p>
-  <%= link_to "Edit", edit_dream_path(dream) %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete %>
-<% end %>
+
+<table>
+  <tr>Dreams</tr>
+
+  <% @dreams.each do |dream| %>
+    <tr>
+      <td>
+        <p>
+          <%= dream.title %> |
+          Date: <%= dream.date.strftime("%m/%d/%Y") %> |
+          Sentiment: <%= dream.sentiment %>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><%= dream.text %></p>
+        <%= link_to "Edit", edit_dream_path(dream) %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 <%= link_to "New Dream", new_dream_path %>
