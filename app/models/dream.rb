@@ -2,6 +2,8 @@ require 'alchemyapi'
 
 class Dream < ActiveRecord::Base
   belongs_to :user
+  has_many :dreams_keywords
+  has_many :keywords, through: :dreams_keywords
 
   validates :text, presence: true
   validates :sentiment, presence: true

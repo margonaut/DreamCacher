@@ -16,13 +16,8 @@ describe Dream do
   it { should have_valid(:title).when('Weird Dream #1') }
 
   it { should validate_numericality_of(:sentiment) }
-  it { should have_valid(:sentiment).when('0.089') }
-  it { should_not have_valid(:sentiment).when('What') }
-  it { should have_valid(:sentiment).when('-0.089') }
-  it { should have_valid(:sentiment).when('1') }
-  it { should have_valid(:sentiment).when('-1') }
-  it { should_not have_valid(:sentiment).when('1.1') }
-  it { should_not have_valid(:sentiment).when('-5') }
+  it { should have_valid(:sentiment).when('0.089', '-0.089', '1', '-1') }
+  it { should_not have_valid(:sentiment).when('What', '1.1', '-5') }
 
   it { should have_valid(:date).when('1991-01-27') }
 
