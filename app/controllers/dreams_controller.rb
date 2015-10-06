@@ -20,6 +20,23 @@ class DreamsController < ApplicationController
     end
   end
 
+  def edit
+    @dream = Dream.find(params[:id])
+  end
+
+  def update
+    @dream = Dream.find(params[:id])
+    @dream.sentiment = @dream.get_sentiment
+
+    if @dream.update(dream_params)
+      flash[:notice] = "Dream updated"
+      redirect_to dreams_path
+    else
+      flash[:errors] = @dream.errors.full_messages.join(" - ")
+      redirect_to :back
+    end
+  end
+
   private
 
   def dream_params
@@ -27,6 +44,7 @@ class DreamsController < ApplicationController
       user: current_user
       )
     date = Date.strptime(dream_params["date"], '%m/%d/%Y')
+    # date = Date.parse(dream_params["date"])
     dream_params["date"] = date
     dream_params
   end

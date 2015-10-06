@@ -5,6 +5,9 @@ module Helpers
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log in'
+  end
 
+  def create_dream(user)
+    FactoryGirl.create(:dream, user: user)
   end
 end
