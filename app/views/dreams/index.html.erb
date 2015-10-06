@@ -3,7 +3,7 @@ Dream Journal
   <p><strong><%= dream.title %></strong></p>
   <p><%= dream.text %></p>
   <p><%= dream.sentiment %>, <%= dream.date.strftime("%m/%d/%Y") %></p>
-  <%= link_to "Edit", edit_dream_path(dream) %>
+  <%= link_to "Edit", edit_dream_path(dream) %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete %>
 <% end %>
 
 <%= link_to "New Dream", new_dream_path %>
