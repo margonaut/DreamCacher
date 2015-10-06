@@ -36,4 +36,16 @@ feature 'user adds a dream', %(
     expect(page).to have_content(dream.title)
     expect(page).to have_content(dream.text)
   end
+
+  scenario 'User adds invalid dream' do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+
+    visit new_dream_path
+
+    fill_in "Dream", with: "Too short"
+    click_button "Add Dream"
+
+    expect(page).to have_content("Text is too short")
+  end
 end
