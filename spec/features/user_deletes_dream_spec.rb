@@ -9,8 +9,7 @@ feature 'user deletes a dream', %(
   # Acceptance Criteria
   # [X] - User sees a delete link on a dream show page
   # [X] - When a user deletes a dream, it disappears from the timeline
-  # [ ] - When a dream is deleted, all keyword and analytics data is also deleted
-
+  # [ ] - When a dream is deleted, keyword and analytics data is deleted
 
   scenario 'sees a delete link on a dream show page' do
     user = FactoryGirl.create(:user)
