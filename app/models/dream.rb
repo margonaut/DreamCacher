@@ -20,7 +20,7 @@ class Dream < ActiveRecord::Base
   validates :mixed, inclusion: { in: [true, false] }
 
   def get_sentiment
-    alchemyapi = AlchemyAPI.new()
+    alchemyapi = AlchemyAPI.new
     response = alchemyapi.sentiment('text', self.text, { 'sentiment'=>1 })
 
     if response['status'] == 'OK'
@@ -31,7 +31,7 @@ class Dream < ActiveRecord::Base
   end
 
   def get_keywords
-    alchemyapi = AlchemyAPI.new()
+    alchemyapi = AlchemyAPI.new
     response = alchemyapi.keywords('text', self.text, { 'sentiment'=>1 })
 
     if response['status'] == 'OK'
@@ -42,15 +42,16 @@ class Dream < ActiveRecord::Base
   end
 
   def keyword_analysis
-    alchemyapi = AlchemyAPI.new()
-    response = alchemyapi.keywords('text', text, { 'sentiment'=>1 })
-
+    alchemyapi = AlchemyAPI.new
+    response = alchemyapi.keywords('text', text, 'sentiment' => 1)
     if response['status'] == 'OK'
-    	keywords = response['keywords']
+      keywords = response['keywords']
       keywords.each do |keyword|
         word = Keyword.find_or_create_by(text: keyword["text"])
         keyword["mixed"].nil? ? mixed = false : mixed = true
-        DreamsKeyword.create(dream: self, keyword: word, relevance: keyword["relevance"], sentiment: keyword["sentiment"]["score"], mixed: mixed )
+        relevance = keyword["relevance"]
+        sentiment = keyword["sentiment"]["score"]
+        DreamsKeyword.create(dream: self, keyword: word, relevance: relevance, sentiment: sentiment, mixed: mixed)
       end
     else
     	puts 'Error in keyword extraction call: ' + response['statusInfo']
