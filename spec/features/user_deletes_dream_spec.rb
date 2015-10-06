@@ -14,7 +14,7 @@ feature 'user deletes a dream', %(
   scenario 'sees a delete link on a dream show page' do
     user = FactoryGirl.create(:user)
     sign_in(user)
-    dream = create_dream(user)
+    create_dream(user)
 
     visit dreams_path
 
