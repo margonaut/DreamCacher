@@ -31,7 +31,7 @@ feature 'user adds a dream', %(
     fill_in "Dream", with: dream.text
     fill_in "dream_date", with: "10/01/2015"
 
-    click_button "Add Dream"
+    click_button "Submit"
 
     expect(page).to have_content(dream.title)
     expect(page).to have_content(dream.text)

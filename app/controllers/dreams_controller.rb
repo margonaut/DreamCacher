@@ -20,8 +20,24 @@ class DreamsController < ApplicationController
     end
   end
 
-  private
+  def edit
+    @dream = Dream.find(params[:id])
+  end
 
+  def update
+    @dream = Dream.find(params[:id])
+    @dream.sentiment = @dream.get_sentiment
+
+    if @dream.update(dream_params)
+      flash[:notice] = "Dream updated"
+      redirect_to dreams_path
+    else
+      flash[:errors] = @dream.errors.full_messages.join(" - ")
+      redirect_to :back
+    end
+  end
+
+  private
   def dream_params
     dream_params = params.require(:dream).permit(:title, :text, :date).merge(
       user: current_user
