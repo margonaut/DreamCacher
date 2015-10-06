@@ -8,7 +8,6 @@ describe Dream do
   it { should validate_presence_of(:date) }
   it { should validate_presence_of(:user) }
 
-
   it { should validate_length_of(:text).is_at_least(15) }
 
   it { should validate_length_of(:title).is_at_most(40) }
@@ -20,7 +19,4 @@ describe Dream do
   it { should_not have_valid(:sentiment).when('What', '1.1', '-5') }
 
   it { should have_valid(:date).when('1991-01-27') }
-
-
-
 end

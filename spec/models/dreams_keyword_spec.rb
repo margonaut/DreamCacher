@@ -16,5 +16,4 @@ describe DreamsKeyword do
   it { should validate_numericality_of(:relevance) }
   it { should have_valid(:relevance).when('0.089', '1', '-1', '-0.89') }
   it { should_not have_valid(:relevance).when('What', '1.1', '-1.5') }
-
 end
