@@ -25,7 +25,7 @@ feature 'user adds a dream', %(
     sign_in(user)
 
     visit new_dream_path
-    dream = FactoryGirl.create(:dream)
+    FactoryGirl.create(:dream)
 
     fill_in "Title", with: "Womp"
     fill_in "Dream", with: dream.text
