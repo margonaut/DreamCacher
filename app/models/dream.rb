@@ -44,6 +44,15 @@ class Dream < ActiveRecord::Base
     end
   end
 
+  def snippet
+    length = 70
+    if text.length < length
+      text
+    else
+      "#{text[0..length]}..."
+    end
+  end
+
   def get_keywords
     alchemyapi = AlchemyAPI.new
     response = alchemyapi.keywords('text', self.text, { 'sentiment'=>1 })
