@@ -4,24 +4,17 @@
 <div class="dream panel medium-6 large-8 columns show-for-medium-up">
   <div class="row">
     <div class="large-9 columns">
-      <h1>Dream Title</h1>
-      Dream content Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
-      `config/routes.rb`
+      <h1 id="dream-title"><%= @active_dream.title %></h1>
+      <%= @active_dream.text %>
     </div>
     <div class="large-3 columns">
       <h4>Themes</h4>
       <ul>
-        <li>One</li>
-        <li>Longer Phrases</li>
-        <li>Boats</li>
-        <li>Rubberducky</li>
-        <li>Fire</li>
+        <% @active_dream.dreams_keywords.each do |keyword|  %>
+          <li>
+            <%= keyword.keyword.text %>
+          </li>
+        <% end %>
       </ul>
 
     </div>

@@ -2,6 +2,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.all.order(:date).reverse_order
+    @active_dream = @dreams.first
   end
 
   def new
