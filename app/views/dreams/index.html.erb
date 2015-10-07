@@ -1,29 +1,29 @@
-Dream Journal
+<div class="timeline panel medium-6 large-4 columns">
   <%= render 'timeline' %>
+</div>
+<div class="dream panel medium-6 large-8 columns show-for-medium-up">
+  <div class="row">
+    <div class="large-9 columns">
+      <h1>Dream Title</h1>
+      Dream content Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`Modify me in `app/views/homes/index.html.erb` or change the root directive in
+      `config/routes.rb`
+    </div>
+    <div class="large-3 columns">
+      <h4>Themes</h4>
+      <ul>
+        <li>One</li>
+        <li>Longer Phrases</li>
+        <li>Boats</li>
+        <li>Rubberducky</li>
+        <li>Fire</li>
+      </ul>
 
-
-<div class="medium-9 columns">
-<table>
-  <tr>Dreams</tr>
-
-  <% @dreams.each do |dream| %>
-    <tr>
-      <td>
-        <p>
-          <%= dream.title %> |
-          Date: <%= dream.date.strftime("%m/%d/%Y") %> |
-          Sentiment: <%= dream.sentiment %>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><%= dream.text %></p>
-        <%= link_to "Edit", edit_dream_path(dream) %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to "New Dream", new_dream_path %>
+    </div>
+  </div>
 </div>
