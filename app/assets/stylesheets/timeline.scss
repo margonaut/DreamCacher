@@ -1,8 +1,15 @@
-// .timeline-wrapper {
-//   background-color: blue;
-// }
+.timeline-wrapper {
+  background-color: blue;
+}
 
 .timeline {
-  // background-color: blue;
   padding: 0;
 }
+
+@media only screen and (min-width: 40.063em) {
+  .timeline {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 65vh;
+  }
+} /* min-width 641px, medium screens */

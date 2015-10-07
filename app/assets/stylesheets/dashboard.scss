@@ -2,7 +2,7 @@
 
 @media only screen and (min-width: 40.063em) {
   .dashboard {
-    margin-top: 5vw;
+    margin-top: 7vw;
   }
 } /* min-width 641px, medium screens */
 
@@ -13,4 +13,9 @@
 .content {
   background-color: red;
   margin-top: 15px;
+  overflow: hidden;
+}
+
+.dream {
+  height: 65vh;
 }
