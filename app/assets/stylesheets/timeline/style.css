@@ -53,7 +53,7 @@ header h1 {
 #cd-timeline {
   position: relative;
   padding: 2em 0;
-  margin-top: 2em;
+  /*margin-top: 2em;*/
   margin-bottom: 2em;
 }
 #cd-timeline::before {
@@ -106,10 +106,10 @@ header h1 {
 
 .cd-timeline-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
@@ -123,13 +123,13 @@ header h1 {
   margin-left: -12px;
   margin-top: -12px;
 }
-.cd-timeline-img.cd-picture {
+.cd-timeline-img.cd-positive {
   background: #75ce66;
 }
-.cd-timeline-img.cd-movie {
+.cd-timeline-img.cd-negative {
   background: #c03b44;
 }
-.cd-timeline-img.cd-location {
+.cd-timeline-img.cd-mixed {
   background: #f0ca45;
 }
 /*@media only screen and (min-width: 1170px) {
