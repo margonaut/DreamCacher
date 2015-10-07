@@ -1,7 +1,7 @@
 class DreamsController < ApplicationController
 
   def index
-    @dreams = Dream.all
+    @dreams = Dream.all.order(:date).reverse_order
   end
 
   def new
