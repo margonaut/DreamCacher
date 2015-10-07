@@ -19,6 +19,20 @@ class Dream < ActiveRecord::Base
 
   validates :mixed, inclusion: { in: [true, false] }
 
+  def positivity
+    if self.mixed?
+      "mixed"
+    elsif self.sentiment.to_f > 0
+      "positive"
+    elsif self.sentiment.to_f < 0
+      "negative"
+    elsif self.sentiment.to_f == 0
+      "neutral"
+    else
+      "problem"
+    end
+  end
+
   def get_sentiment
     alchemyapi = AlchemyAPI.new
     response = alchemyapi.sentiment('text', self.text, { 'sentiment'=>1 })

@@ -132,6 +132,9 @@ header h1 {
 .cd-timeline-img.cd-mixed {
   background: #f0ca45;
 }
+.cd-timeline-img.cd-neutral {
+  background: #c5c5c5;
+}
 /*@media only screen and (min-width: 1170px) {
   .cd-timeline-img {
     width: 60px;

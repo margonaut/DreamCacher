@@ -1,7 +1,7 @@
 <section id="cd-timeline" class="cd-container">
   <% @dreams.each do |dream| %>
     <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-positive">
+      <div class="cd-timeline-img cd-<%= dream.positivity %>">
       </div> <!-- cd-timeline-img -->
 
       <div class="cd-timeline-content">
