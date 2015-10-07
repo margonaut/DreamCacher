@@ -9,14 +9,16 @@
 </head>
 <body>
 <div class="background">
-  <div class="dashboard row">
+  <div class="dashboard row uncollapse">
     <%= render "layouts/nav" %>
+    <div class="content">
         <%- flash.each do |key, value| -%>
           <div class="alert-box flash flash-<%= key %>">
             <%= value %>
           </div>
         <%- end -%>
           <%= yield %>
+      </div>
   </div>
 </div>
 
