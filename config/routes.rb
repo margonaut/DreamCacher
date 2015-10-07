@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'dreams#index'
+  root 'homes#index'
 
   resources :dreams, only: [:index, :create, :new, :update, :edit, :destroy]
 

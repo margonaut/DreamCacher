@@ -8,33 +8,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Dreamcacher</a></h1>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+<div class="background">
+  <div class="dashboard row uncollapse">
+    <%= render "layouts/nav" %>
+    <div class="content">
+        <%- flash.each do |key, value| -%>
+          <div class="alert-box flash flash-<%= key %>">
+            <%= value %>
+          </div>
         <%- end -%>
-      </ul>
-    </section>
-  </nav>
-
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
-
-  <%= yield %>
+          <%= yield %>
+      </div>
+  </div>
+</div>
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>

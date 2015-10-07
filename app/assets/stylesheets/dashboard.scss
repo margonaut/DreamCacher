@@ -1,0 +1,22 @@
+
+
+@media only screen and (min-width: 40.063em) {
+  .dashboard {
+    margin-top: 5vw;
+  }
+} /* min-width 641px, medium screens */
+
+.dashboard {
+  background-color: #000;
+}
+
+.content {
+  background-color: red;
+  margin-top: 15px;
+}
+
+.timeline {
+  background-color: blue;
+  height: 600px;
+  padding: 0;
+}
