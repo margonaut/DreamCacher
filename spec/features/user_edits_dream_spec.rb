@@ -18,7 +18,6 @@ feature 'user edits a dream', %(
     user = FactoryGirl.create(:user)
     sign_in(user)
     dream = create_dream(user)
-
     visit edit_dream_path(dream)
     expect(page).to have_content("Edit")
     expect(page).to have_content(dream.title)

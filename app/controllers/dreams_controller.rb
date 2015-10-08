@@ -1,7 +1,15 @@
 class DreamsController < ApplicationController
 
   def index
-    @dreams = Dream.all
+    @dreams = Dream.where(user: current_user).order(:date).reverse_order
+    @active_dream = @dreams.first
+    respond_to do |format|
+      format.html {  }
+      format.json do
+        @active_dream = Dream.find(params["dream_id"])
+        render json: { active_dream: @active_dream }
+      end
+    end
   end
 
   def new

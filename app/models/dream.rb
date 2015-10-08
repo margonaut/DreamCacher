@@ -19,6 +19,20 @@ class Dream < ActiveRecord::Base
 
   validates :mixed, inclusion: { in: [true, false] }
 
+  def positivity
+    if mixed?
+      "mixed"
+    elsif sentiment.to_f > 0
+      "positive"
+    elsif sentiment.to_f < 0
+      "negative"
+    elsif sentiment.to_f == 0
+      "neutral"
+    else
+      "problem"
+    end
+  end
+
   def get_sentiment
     alchemyapi = AlchemyAPI.new
     response = alchemyapi.sentiment('text', self.text, { 'sentiment'=>1 })
@@ -27,6 +41,15 @@ class Dream < ActiveRecord::Base
       sentiment = response['docSentiment']['score']
     else
       puts 'Error in sentiment extraction call: ' + response['statusInfo']
+    end
+  end
+
+  def snippet
+    length = 70
+    if text.length < length
+      text
+    else
+      "#{text[0..length]}..."
     end
   end
 

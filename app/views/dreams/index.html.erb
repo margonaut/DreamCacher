@@ -1,29 +1,25 @@
-Dream Journal
+<div class="timeline panel medium-6 large-4 columns">
   <%= render 'timeline' %>
+</div>
+<div class="dream panel medium-6 large-8 columns show-for-medium-up">
+  <div class="row">
+    <div class="large-9 columns">
+      <h1 id="dream-title"><%= @active_dream.title %></h1>
+      <p id="dream-text"><%= @active_dream.text %></p>
+      <p>
+        <%= link_to "Edit", edit_dream_path(@active_dream) %> | <%= link_to 'Delete Dream', dream_path(@active_dream), method: :delete %>
+      </p>
+    </div>
+    <div class="large-3 columns">
+      <h4>Themes</h4>
+      <ul>
+        <% @active_dream.dreams_keywords.each do |keyword|  %>
+          <li class="dream-key">
+            <%= keyword.keyword.text %>
+          </li>
+        <% end %>
+      </ul>
 
-
-<div class="medium-9 columns">
-<table>
-  <tr>Dreams</tr>
-
-  <% @dreams.each do |dream| %>
-    <tr>
-      <td>
-        <p>
-          <%= dream.title %> |
-          Date: <%= dream.date.strftime("%m/%d/%Y") %> |
-          Sentiment: <%= dream.sentiment %>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><%= dream.text %></p>
-        <%= link_to "Edit", edit_dream_path(dream) %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to "New Dream", new_dream_path %>
+    </div>
+  </div>
 </div>

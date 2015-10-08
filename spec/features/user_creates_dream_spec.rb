@@ -26,15 +26,14 @@ feature 'user adds a dream', %(
 
     visit new_dream_path
     dream = FactoryGirl.create(:dream)
-
-    fill_in "Title", with: "Womp"
+    fill_in "Title", with: dream.title
     fill_in "Dream", with: dream.text
     fill_in "dream_date", with: "10/01/2015"
 
     click_button "Add Dream"
 
     expect(page).to have_content(dream.title)
-    expect(page).to have_content(dream.text)
+    expect(page).to have_content(dream.text[0..10])
   end
 
   scenario 'User adds invalid dream' do
