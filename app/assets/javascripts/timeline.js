@@ -3,14 +3,13 @@ var replaceKeywords = function(keywords) {
   var list = $("#keyword-list");
   for (var i = 0; i < keywords.length; i++) {
     list.append("<li class=\"dream-key\">" + keywords[i].text + "</li>");
-  }
+  };
 }
 
 var changeDream = function(dream) {
   var keywords = dream.dreams_keywords
   var dreamTitle = $("#dream-title");
   var dreamText = $("#dream-text");
-  var dreamDate = $("#dream-date")
   dreamTitle.text(dream.title);
   dreamText.text(dream.text);
   replaceKeywords(keywords);
