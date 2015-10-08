@@ -3,6 +3,14 @@ class DreamsController < ApplicationController
   def index
     @dreams = Dream.all.order(:date).reverse_order
     @active_dream = @dreams.first
+
+    respond_to do |format|
+      format.html {  }
+      format.json do
+        @active_dream = Dream.find(params["dream_id"])
+        render json: { active_dream: @active_dream }
+      end
+    end
   end
 
   def new
