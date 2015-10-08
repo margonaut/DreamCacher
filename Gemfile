@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'foundation-rails'
 gem 'json'
-
+gem 'active_model_serializers', '0.8.3'
 
 
 

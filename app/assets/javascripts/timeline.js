@@ -1,31 +1,35 @@
+var replaceKeywords = function(keywords) {
+  $(".dream-key").remove();
+  var list = $("#keyword-list");
+  for (var i = 0; i < keywords.length; i++) {
+    list.append("<li class=\"dream-key\">" + keywords[i].text + "</li>");
+  }
+};
+
 var changeDream = function(dream) {
+  var keywords = dream.dreams_keywords;
   var dreamTitle = $("#dream-title");
   var dreamText = $("#dream-text");
-  var dreamKeys = $(".dream-key");
   dreamTitle.text(dream.title);
   dreamText.text(dream.text);
-  // loop through dreamKeys
-  // write method to wipe list and write new lis correctly
+  replaceKeywords(keywords);
 };
 
 $(".details").on("click", function(event) {
-  debugger;
   event.preventDefault();
   if(event.isDefaultPrevented()){
       // default event is prevented
   }else{
       event.returnValue = false;
-      console.log("what")
   }
   var dreamId = this.id;
   $.ajax({
     method: "GET",
-    url: ("/dreams"),
+    url: ("/api/v1/dreams/" + dreamId),
     data: { dream_id: dreamId },
     dataType: "json"
   })
   .done(function(data){
-    var activeDream = data["active_dream"];
-    changeDream(activeDream);
+    changeDream(data.dream);
   });
 });
