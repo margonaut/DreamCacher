@@ -1,3 +1,13 @@
+var changeDream = function(dream) {
+  var dreamTitle = $("#dream-title");
+  var dreamText = $("#dream-text");
+  var dreamKeys = $(".dream-key");
+  dreamTitle.text(dream.title);
+  dreamText.text(dream.text);
+  // loop through dreamKeys
+  // write method to wipe list and write new lis correctly
+};
+
 $(".details").on("click", function(event) {
   debugger;
   event.preventDefault();
@@ -8,7 +18,6 @@ $(".details").on("click", function(event) {
       console.log("what")
   }
   var dreamId = this.id;
-  var $t = $(this);
   $.ajax({
     method: "GET",
     url: ("/dreams"),
@@ -16,21 +25,7 @@ $(".details").on("click", function(event) {
     dataType: "json"
   })
   .done(function(data){
-    var activeDream = data["active_dream"]
+    var activeDream = data["active_dream"];
     changeDream(activeDream);
   });
 });
-
-
-var changeDream = function(dream) {
-  var dreamTitle = $('#dream-title');
-  var dreamText = $('#dream-text');
-  var dreamKeys = $('.dream-key');
-  dreamTitle.text(dream.title);
-  dreamText.text(dream.text);
-
-  for (i = 0; i > dreamKeys.length; i++ ) {
-    var key = dreamKeys[i];
-    // write method to wipe list and write new lis correctly
-  };
-};

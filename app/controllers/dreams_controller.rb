@@ -3,7 +3,6 @@ class DreamsController < ApplicationController
   def index
     @dreams = Dream.where(user: current_user).order(:date).reverse_order
     @active_dream = @dreams.first
-
     respond_to do |format|
       format.html {  }
       format.json do

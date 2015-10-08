@@ -1,5 +1,7 @@
+$blue: #0000ff;
+
 .timeline-wrapper {
-  background-color: blue;
+  background-color: $blue;
 }
 
 .timeline {
@@ -8,8 +10,8 @@
 
 @media only screen and (min-width: 40.063em) {
   .timeline {
-    overflow-y: scroll;
-    overflow-x: hidden;
     height: 65vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
-} /* min-width 641px, medium screens */
+} // min-width 641px, medium screens

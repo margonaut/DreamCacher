@@ -20,13 +20,13 @@ class Dream < ActiveRecord::Base
   validates :mixed, inclusion: { in: [true, false] }
 
   def positivity
-    if self.mixed?
+    if mixed?
       "mixed"
-    elsif self.sentiment.to_f > 0
+    elsif sentiment.to_f > 0
       "positive"
-    elsif self.sentiment.to_f < 0
+    elsif sentiment.to_f < 0
       "negative"
-    elsif self.sentiment.to_f == 0
+    elsif sentiment.to_f == 0
       "neutral"
     else
       "problem"
