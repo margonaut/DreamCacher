@@ -4,7 +4,7 @@ var replaceKeywords = function(keywords) {
   for (var i = 0; i < keywords.length; i++) {
     list.append("<li class=\"dream-key\">" + keywords[i].text + "</li>");
   }
-}
+};
 
 var changeDream = function(dream) {
   var keywords = dream.dreams_keywords;
