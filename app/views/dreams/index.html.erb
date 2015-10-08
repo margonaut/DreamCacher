@@ -6,6 +6,9 @@
     <div class="large-9 columns">
       <h1 id="dream-title"><%= @active_dream.title %></h1>
       <p id="dream-text"><%= @active_dream.text %></p>
+      <p>
+        <%= link_to "Edit", edit_dream_path(@active_dream) %> | <%= link_to 'Delete Dream', dream_path(@active_dream), method: :delete %>
+      </p>
     </div>
     <div class="large-3 columns">
       <h4>Themes</h4>
