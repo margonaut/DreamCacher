@@ -12,7 +12,7 @@
     </div>
     <div class="large-3 columns">
       <h4>Themes</h4>
-      <ul>
+      <ul id="keyword-list">
         <% @active_dream.dreams_keywords.each do |keyword|  %>
           <li class="dream-key">
             <%= keyword.keyword.text %>
