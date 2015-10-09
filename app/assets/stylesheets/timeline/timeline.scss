@@ -12,6 +12,6 @@ $blue: #0000ff;
   .timeline {
     height: 65vh;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 } // min-width 641px, medium screens
