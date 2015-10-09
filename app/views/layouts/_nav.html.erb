@@ -7,6 +7,7 @@
 
   <section class="top-bar-section">
     <ul class="left">
+       <li><%= image_tag "#{current_user.avatar}", id: "avatar"%></li>
       <%- if current_user -%>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       <%- else -%>

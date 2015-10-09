@@ -15,6 +15,8 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'json'
 gem 'active_model_serializers', '0.8.3'
+gem 'carrierwave'
+gem 'fog'
 
 
 

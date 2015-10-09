@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :dreams
   has_many :keywords, through: :dreams
+
+  mount_uploader :avatar, AvatarUploader
   after_create :first_dream
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
