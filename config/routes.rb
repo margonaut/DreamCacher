@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   authenticated do
-    root :to => 'dreams#index', as: :authenticated
+    root to: 'dreams#index', as: :authenticated
   end
-  root :to => 'homes#index'
+  root to: 'homes#index'
 
   resources :dreams, only: [:index, :create, :new, :update, :edit, :destroy]
 

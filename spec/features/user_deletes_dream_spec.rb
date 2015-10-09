@@ -15,9 +15,7 @@ feature 'user deletes a dream', %(
     user = FactoryGirl.create(:user)
     sign_in(user)
     create_dream(user)
-
     visit dreams_path
-
     expect(page).to have_content("Delete Dream")
   end
 
@@ -25,7 +23,7 @@ feature 'user deletes a dream', %(
     user = FactoryGirl.create(:user)
     sign_in(user)
     create_dream(user)
-    
+
     click_link "Delete Dream"
 
     expect(page).to_not have_content("Welcome to your Dream Journal")
