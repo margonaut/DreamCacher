@@ -10,8 +10,8 @@
   overflow: hidden;
 }
 
-#avatar {
-  /*how to change the position of the photo*/
-  width: 30px;
+.avatar {
   height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
