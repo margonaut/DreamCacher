@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  authenticated do
+    root :to => 'dreams#index', as: :authenticated
+  end
+  root :to => 'homes#index'
 
   resources :dreams, only: [:index, :create, :new, :update, :edit, :destroy]
+
+  resources :analytics, only: [:index]
 
   devise_for :users
 

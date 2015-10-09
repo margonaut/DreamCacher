@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dreamcacher</title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <section class="top">
+  </section>
+  <section class="bottom">
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <div class="arrows">
+      <div class="arrow-left"></div>
+      <div class="arrow-right"></div>
+    </div>
+    <div class="demos">
+      <div class="demo-name current">
+        <div class="text-content"></div>
+        <div class="photo-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield :extra_footer %>
+</body>
+</html>
