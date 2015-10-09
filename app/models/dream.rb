@@ -1,6 +1,8 @@
 require 'alchemyapi'
 
 class Dream < ActiveRecord::Base
+  after_create :get_sentiment
+  after_create :keyword_analysis
   belongs_to :user
   has_many :dreams_keywords
   has_many :keywords, through: :dreams_keywords

@@ -8,7 +8,7 @@ var replaceKeywords = function(keywords) {
 
 var replaceLinks = function(dreamId) {
   $("#delete-link").attr("href", "/dreams/" + dreamId);
-  $("#edit-link").attr("href", "/" + dreamId + "/edit");
+  $("#edit-link").attr("href", "/dreams/" + dreamId + "/edit");
 };
 
 var changeDream = function(dream) {

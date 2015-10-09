@@ -12,9 +12,9 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-    @dream.sentiment = @dream.get_sentiment
+    # @dream.sentiment = @dream.get_sentiment
     if @dream.save
-      @dream.keyword_analysis
+      # @dream.keyword_analysis
       flash[:notice] = "Dream saved"
       redirect_to dreams_path
     else
