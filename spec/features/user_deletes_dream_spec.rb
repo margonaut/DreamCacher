@@ -27,7 +27,6 @@ feature 'user deletes a dream', %(
     dream = create_dream(user)
 
     visit dreams_path
-
     click_link "Delete Dream"
 
     expect(page).to_not have_content(dream.title)

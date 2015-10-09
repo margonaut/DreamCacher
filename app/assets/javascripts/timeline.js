@@ -6,6 +6,11 @@ var replaceKeywords = function(keywords) {
   }
 };
 
+var replaceLinks = function(dreamId) {
+  $("#delete-link").attr("href", "/dreams/" + dreamId);
+  $("#edit-link").attr("href", "/" + dreamId + "/edit");
+};
+
 var changeDream = function(dream) {
   var keywords = dream.dreams_keywords;
   var dreamTitle = $("#dream-title");
@@ -13,6 +18,7 @@ var changeDream = function(dream) {
   dreamTitle.text(dream.title);
   dreamText.text(dream.text);
   replaceKeywords(keywords);
+  replaceLinks(dream.id);
 };
 
 $(".details").on("click", function(event) {
