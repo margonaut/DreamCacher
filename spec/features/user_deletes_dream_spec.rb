@@ -21,15 +21,13 @@ feature 'user deletes a dream', %(
     expect(page).to have_content("Delete Dream")
   end
 
-  scenario 'When a user deletes a dream, it disappears' do
+  scenario 'When a user deletes a dream, it disappears', js: true do
     user = FactoryGirl.create(:user)
     sign_in(user)
-    dream = create_dream(user)
-
-    visit dreams_path
+    create_dream(user)
+    
     click_link "Delete Dream"
 
-    expect(page).to_not have_content(dream.title)
-    expect(page).to_not have_content(dream.text)
+    expect(page).to_not have_content("Welcome to your Dream Journal")
   end
 end
