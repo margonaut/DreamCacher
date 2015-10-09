@@ -8,7 +8,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   def default_url(*)
     ActionController::Base.helpers.asset_path(
-    "fallback/" + [version_name, "default.jpg"].compact.join('_')
+      "fallback/" + [version_name, "default.jpg"].compact.join('_')
     )
   end
   # Override the directory where uploaded files will be stored.
