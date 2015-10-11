@@ -75,7 +75,6 @@ $black: #000000;
 
 
 .demo-row {
-  background-color: grey;
   position: relative;
   height: 100%;
 }
@@ -106,43 +105,35 @@ $black: #000000;
 
 // *************************** DEMOS **************************************
 
-.demo-wrapper {
-}
-
 .slide {
   opacity: 0;
   position: relative;
   width: 85%;
   margin: 0 auto;
-}
-
-.demo {
-  position: absolute;
-}
-
-.text-content {
-  h3 {
-    margin-top: 30px;
-  }
+  padding-top: 10px;
+  display: none;
 }
 
 .current {
   opacity: 1;
-  // z-index: 2;
+  z-index: 2;
+  display: block;
 }
 
 @media only screen and (min-width: 40.063em) {
   .text-content {
-    h3 {
-      font-size: 4vmin;
-    }
-  }
-}
+    padding-top: 70px;
 
-@media only screen and (min-width: 90.063em) {
-  .text-content {
     h3 {
-      font-size: 3vmin;
+      font-size: 4vh;
+    }
+    p {
+      font-size: 2vh;
     }
   }
+
+  .medium-img {
+    padding-top: 2.3em;
+  }
+
 }
