@@ -1,3 +1,8 @@
+$white: #FFFFFF;
+$black: #000000;
+
+// *************************** SECTIONS **************************************
+
 .top {
   background-image: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
   background-position: center center;
@@ -6,9 +11,127 @@
   -webkit-background-size: cover;
   background-size: cover;
   height: 50vh;
-  position: relative;
+  overflow: hidden;
 }
 
 .bottom {
   height: 50vh;
+  color: $black;
+}
+
+// *************************** TITLE BOX **************************************
+
+.title-box {
+  top: 20%;
+  height: 50%;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  color: $white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10vmin;
+}
+
+.subtitle {
+  font-size: 7vmin;
+}
+
+.action {
+  margin-top: 5vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7vmin;
+  background: transparent;
+  border: 3px solid $white;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .title {
+    font-size: 7vmin;
+  }
+  .subtitle {
+    font-size: 5vmin;
+  }
+  .action {
+    font-size: 4vmin;
+  }
+}
+
+ @media only screen and (min-width: 90.063em) {
+   .title {
+     font-size: 5vmin;
+   }
+   .subtitle {
+     font-size: 4vmin;
+   }
+   .action {
+     font-size: 3vmin;
+   }
+}
+
+// *************************** DEMO BOX **************************************
+
+
+.demo-row {
+  background-color: grey;
+  position: relative;
+  height: 100%;
+}
+
+
+// *************************** ARROWS **************************************
+
+
+.arrow {
+  position: absolute;
+  width: 7vmin;
+  top: 45%;
+}
+
+.arrow-left {
+  left: 2%;
+}
+
+.arrow-right {
+  right: 2%;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .arrow {
+    width: 3vmin;
+  }
+}
+
+// *************************** DEMOS **************************************
+
+.demo-wrapper {
+}
+
+.slide {
+  opacity: 0;
+  position: relative;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.demo {
+  position: absolute;
+}
+
+.text-content {
+  width: 50%;
+
+  h3 {
+    font-size: 5vmin;
+  }
+  p {
+    font-size: 3vmin;
+  }
+}
+
+.current {
+  opacity: 1;
+  // z-index: 2;
 }

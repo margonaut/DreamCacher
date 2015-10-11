@@ -4,6 +4,7 @@
   <title>Dreamcacher</title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,18 +15,36 @@
     </div>
   <%- end -%>
   <section class="top">
+    <div class="title-box">
+      <h1 class="title">DREAMCACHER</h1>
+      <h2 class="title subtitle">data visualization + dream journal</h2>
+    <%= link_to 'get started', new_user_registration_path, class: "action button" %>
+    </div>
   </section>
   <section class="bottom">
-    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-    <li><%= link_to 'Sign In', new_user_session_path %></li>
-    <div class="arrows">
-      <div class="arrow-left"></div>
-      <div class="arrow-right"></div>
-    </div>
-    <div class="demos">
-      <div class="demo-name current">
-        <div class="text-content"></div>
-        <div class="photo-content"></div>
+    <div class="row demo-row">
+      <div class="arrow arrow-left">
+        <img src="https://cdn1.iconfinder.com/data/icons/arrows-15/96/Arrow-RightinCircle-512.png" />
+      </div>
+      <div class="arrow arrow-right">
+        <img src="https://cdn1.iconfinder.com/data/icons/arrows-15/96/Arrow-RightinCircle-512.png" />
+      </div>
+      <div class="demo-wrapper">
+        <div class="slide current">
+          <div class="demo demo-analytics">
+            <div class="text-content">
+              <h3>Dream Analytics</h3>
+              <p>Significant patterns in your dreams are revealed in the analytics dashboard.</p>
+            </div>
+            <div class="photo-content">I AM A PHOTO</div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="demo-timeline">
+            <div class="text-content">ANOTHER TITLE</div>
+            <div class="photo-content">I AM A PHOTO</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
