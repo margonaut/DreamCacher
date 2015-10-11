@@ -1,0 +1,44 @@
+.devise-background {
+  background-image: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
+  background-position: center center;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  padding:20px;
+  position:relative;
+}
+
+.devise-wrapper {
+  margin: 0 auto;
+
+}
+
+.devise-content {
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+.devise-header {
+  background-color: #30385F;
+  text-align: center;
+  line-height: normal;
+
+  h1 {
+    margin: 0;
+    line-height: 70px;
+    font-size: 2.7rem;
+  }
+}
+
+
+@media only screen and (min-width: 40.063em) {
+  .devise-wrapper {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+  }
+}

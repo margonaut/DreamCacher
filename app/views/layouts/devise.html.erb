@@ -10,11 +10,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%- flash.each do |key, value| -%>
-      <div class="alert-box flash flash-<%= key %>">
-        <%= value %>
+    <div class="devise-background">
+      <div class="devise-wrapper">
+        <%= yield %>
       </div>
-    <%- end -%>
-    <%= yield %>
+    </div>
   </body>
 </html>

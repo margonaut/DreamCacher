@@ -1,5 +1,4 @@
 var changeSlide = function(current, next) {
-  debugger;
   current.toggleClass("current");
   next.toggleClass("current");
 };
