@@ -19,3 +19,4 @@
 *.txt
 .env
 /public/uploads
+personal_seeds.rb
