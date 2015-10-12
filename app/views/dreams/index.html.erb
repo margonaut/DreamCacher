@@ -1,9 +1,9 @@
 <div class="timeline panel medium-6 large-4 columns">
   <section id="cd-timeline" class="cd-container">
-    <% unless @dreams.empty? %>
-      <%= render partial: "dream", collection: @dreams %>
-    <% else %>
+    <% if @dreams.empty? %>
       <%= render partial: "empty_dream" %>
+    <% else %>
+      <%= render partial: "dream", collection: @dreams %>
     <% end %>
   	</section>
 </div>
