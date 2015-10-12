@@ -51,6 +51,7 @@ $darkgrey: #b9b9b9;
 }
 
 @media only screen and (min-width: 40.063em) {
+
   .title {
     font-size: 7vmin;
   }
@@ -64,18 +65,19 @@ $darkgrey: #b9b9b9;
   }
 }
 
- @media only screen and (min-width: 90.063em) {
-   .title {
-     font-size: 5vmin;
-   }
+@media only screen and (min-width: 90.063em) {
 
-   .subtitle {
-     font-size: 4vmin;
-   }
+  .title {
+   font-size: 5vmin;
+  }
 
-   .action {
-     font-size: 3vmin;
-   }
+  .subtitle {
+   font-size: 4vmin;
+  }
+
+  .action {
+   font-size: 3vmin;
+  }
 }
 
 // *************************** DEMO BOX **************************************
@@ -153,6 +155,7 @@ $darkgrey: #b9b9b9;
     h3 {
       font-size: 4vh;
     }
+
     p {
       font-size: 2vh;
     }
