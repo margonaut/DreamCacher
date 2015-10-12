@@ -1,4 +1,4 @@
-$white: #FFFFFF;
+$white: #ffffff;
 $black: #000000;
 $grey: #e7e7e7;
 $darkgrey: #b9b9b9;
@@ -14,7 +14,7 @@ $darkgrey: #b9b9b9;
   background-size: cover;
   height: 50vh;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0,0,0,1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
 .bottom {
@@ -25,10 +25,10 @@ $darkgrey: #b9b9b9;
 // *************************** TITLE BOX **************************************
 
 .title-box {
-  top: 20%;
   height: 50%;
-  text-align: center;
   position: relative;
+  text-align: center;
+  top: 20%;
   width: 100%;
 }
 
@@ -43,20 +43,22 @@ $darkgrey: #b9b9b9;
 }
 
 .action {
-  margin-top: 5vh;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 7vmin;
   background: transparent;
   border: 3px solid $white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7vmin;
+  margin-top: 5vh;
 }
 
 @media only screen and (min-width: 40.063em) {
   .title {
     font-size: 7vmin;
   }
+
   .subtitle {
     font-size: 5vmin;
   }
+
   .action {
     font-size: 4vmin;
   }
@@ -66,9 +68,11 @@ $darkgrey: #b9b9b9;
    .title {
      font-size: 5vmin;
    }
+
    .subtitle {
      font-size: 4vmin;
    }
+
    .action {
      font-size: 3vmin;
    }
@@ -78,8 +82,8 @@ $darkgrey: #b9b9b9;
 
 
 .demo-row {
-  position: relative;
   height: 100%;
+  position: relative;
 }
 
 
@@ -87,30 +91,30 @@ $darkgrey: #b9b9b9;
 
 
 .arrow {
-  position: absolute;
-  top: 45%;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2rem;
   border: 2px solid $grey;
   border-radius: 50%;
   color: $grey;
-  width: 36px;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
   height: 36px;
   padding: 8px;
+  position: absolute;
   text-align: center;
-  cursor: pointer;
+  top: 45%;
+  width: 36px;
 
   &:hover {
-    color: $darkgrey;
     border-color: $darkgrey;
-    transition: color 1s ease-out;
+    color: $darkgrey;
     transition: border-color 1s ease-out;
+    transition: color 1s ease-out;
   }
 
   span {
+    left: 8px;
     position: absolute;
     top: -5px;
-    left: 8px;
   }
 }
 
@@ -128,18 +132,18 @@ $darkgrey: #b9b9b9;
 // *************************** DEMOS **************************************
 
 .slide {
+  display: none;
+  margin: 0 auto;
   opacity: 0;
+  padding-top: 10px;
   position: relative;
   width: 85%;
-  margin: 0 auto;
-  padding-top: 10px;
-  display: none;
 }
 
 .current {
+  display: block;
   opacity: 1;
   z-index: 2;
-  display: block;
 }
 
 @media only screen and (min-width: 40.063em) {
@@ -162,22 +166,22 @@ $darkgrey: #b9b9b9;
 // *************************** UPPER NAV **************************************
 
 .uppernav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 5px;
   font-family: 'Josefin Sans', sans-serif;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+  top: 0;
 
-    span {
-      font-size: 1.5rem;
-      font-weight: bolder;
-    }
+  span {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
 
-    a {
-      color: rgba(255, 255, 255, 0.6);
-    }
+  a {
+    color: rgba(255, 255, 255, 0.6);
+  }
 
-    a:hover {
-      color: $white;
-    }
+  a:hover {
+    color: $white;
+  }
 }
