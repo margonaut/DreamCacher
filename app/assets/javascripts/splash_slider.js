@@ -7,8 +7,7 @@ $('.arrow').on("click", function(event) {
   var $slideOne = $(".analytics-slide");
   var $slideTwo = $(".timeline-slide");
   var $slideThree = $(".recording-slide");
-  var $currentSlide = $(".current")
-  var direction = this.id
+  var $currentSlide = $(".current");
 
   if ($currentSlide.hasClass("analytics-slide")) {
     changeSlide($currentSlide, $slideTwo);
