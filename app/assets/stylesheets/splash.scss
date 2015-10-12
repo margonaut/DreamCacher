@@ -157,5 +157,27 @@ $darkgrey: #b9b9b9;
   .medium-img {
     padding-top: 2.3em;
   }
+}
 
+// *************************** UPPER NAV **************************************
+
+.uppernav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-family: 'Josefin Sans', sans-serif;
+
+    span {
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    a:hover {
+      color: $white;
+    }
 }

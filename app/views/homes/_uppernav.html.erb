@@ -1,0 +1,8 @@
+<div class="uppernav">
+  <%- if controller_name == 'homes' %>
+    <a href="/users/sign_in">LOGIN <span>⌄</span></a>
+  <% end -%>
+  <%- if controller_name != 'homes' %>
+    <a href="/"><span><</span> BACK</a>
+  <% end -%>
+</div>
