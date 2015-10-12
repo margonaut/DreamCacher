@@ -1,4 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300|Open+Sans:400,600,300);
 
+// font-family: 'Josefin Sans', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+}
 
 .background {
   background-color: #ADD8E6;

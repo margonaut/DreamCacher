@@ -9,17 +9,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="background">
-  <%= render "layouts/alerts" %>
-  <div class="dashboard row">
-    <%= render "layouts/nav" %>
-    <div class="content">
-          <%= yield %>
+    <div class="devise-background">
+    <%= render "layouts/alerts" %>
+    <%= render "homes/uppernav" %>
+      <div class="devise-wrapper">
+        <%= yield %>
       </div>
-  </div>
-</div>
-
-  <%= javascript_include_tag 'application' %>
-  <%= yield :extra_footer %>
-</body>
-</html>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :extra_footer %>
+  </body>
+  </html>

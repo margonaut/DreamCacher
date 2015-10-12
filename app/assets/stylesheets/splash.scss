@@ -1,3 +1,10 @@
+$white: #ffffff;
+$black: #000000;
+$grey: #e7e7e7;
+$darkgrey: #b9b9b9;
+
+// *************************** SECTIONS **************************************
+
 .top {
   background-image: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
   background-position: center center;
@@ -6,9 +13,177 @@
   -webkit-background-size: cover;
   background-size: cover;
   height: 50vh;
-  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 
 .bottom {
   height: 50vh;
+  color: $black;
+}
+
+// *************************** TITLE BOX **************************************
+
+.title-box {
+  height: 50%;
+  position: relative;
+  text-align: center;
+  top: 20%;
+  width: 100%;
+}
+
+.title {
+  color: $white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10vmin;
+}
+
+.subtitle {
+  font-size: 7vmin;
+}
+
+.action {
+  background: transparent;
+  border: 3px solid $white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7vmin;
+  margin-top: 5vh;
+}
+
+@media only screen and (min-width: 40.063em) {
+
+  .title {
+    font-size: 7vmin;
+  }
+
+  .subtitle {
+    font-size: 5vmin;
+  }
+
+  .action {
+    font-size: 4vmin;
+  }
+}
+
+@media only screen and (min-width: 90.063em) {
+
+  .title {
+    font-size: 5vmin;
+  }
+
+  .subtitle {
+    font-size: 4vmin;
+  }
+
+  .action {
+    font-size: 3vmin;
+  }
+}
+
+// *************************** DEMO BOX **************************************
+
+
+.demo-row {
+  height: 100%;
+  position: relative;
+}
+
+
+// *************************** ARROWS **************************************
+
+
+.arrow {
+  border: 2px solid $grey;
+  border-radius: 50%;
+  color: $grey;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  height: 36px;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  width: 36px;
+
+  &:hover {
+    border-color: $darkgrey;
+    color: $darkgrey;
+  }
+
+  span {
+    left: 8px;
+    position: absolute;
+    top: -5px;
+  }
+}
+
+#arrow-left {
+  left: 2%;
+}
+
+#arrow-right {
+  right: 2%;
+}
+
+@media only screen and (min-width: 40.063em) {
+}
+
+// *************************** DEMOS **************************************
+
+.slide {
+  display: none;
+  margin: 0 auto;
+  opacity: 0;
+  padding-top: 10px;
+  position: relative;
+  width: 85%;
+}
+
+.current {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 40.063em) {
+
+  .text-content {
+    padding-top: 70px;
+
+    h3 {
+      font-size: 4vh;
+    }
+
+    p {
+      font-size: 2vh;
+    }
+  }
+
+  .medium-img {
+    padding-top: 2.3em;
+  }
+}
+
+// *************************** UPPER NAV **************************************
+
+.uppernav {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  span {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  a:hover {
+    color: $white;
+  }
 }
