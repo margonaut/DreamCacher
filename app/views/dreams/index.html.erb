@@ -9,6 +9,10 @@
 </div>
 <div class="dream panel medium-6 large-8 columns show-for-medium-up">
   <div class="row">
-    <%= render partial: "active_dream", object: @dreams.first, as: :dream %>
+    <% if @dreams.first.nil? %>
+      <h1>Your journal is empty!</h1>
+    <% else %>
+      <%= render partial: "active_dream", object: @dreams.first, as: :dream %>
+    <% end %>
   </div>
 </div>
