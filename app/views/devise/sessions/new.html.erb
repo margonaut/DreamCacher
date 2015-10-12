@@ -1,11 +1,6 @@
 <div class="devise-header">
   <h1 class="title">LOG IN</h1>
 </div>
-<%- flash.each do |key, value| -%>
-  <div class="alert-box flash flash-<%= key %>">
-    <%= value %>
-  </div>
-<%- end -%>
 <div class="devise-content">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">

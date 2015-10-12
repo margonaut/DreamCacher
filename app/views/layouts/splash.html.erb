@@ -9,11 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%- flash.each do |key, value| -%>
-    <div class="alert-box flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+  <%= render "layouts/alerts" %>
   <section class="top">
     <div class="title-box">
       <h1 class="title">DREAMCACHER</h1>

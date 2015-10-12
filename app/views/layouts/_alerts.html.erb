@@ -1,0 +1,8 @@
+<div class="alert-container">
+  <%- flash.each do |key, value| -%>
+    <div data-alert class="alert-box flash flash-<%= key %>">
+      <%= value %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <%- end -%>
+</div>
