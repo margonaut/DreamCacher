@@ -1,15 +1,9 @@
 <div class="timeline panel medium-6 large-4 columns">
   <section id="cd-timeline" class="cd-container">
     <% unless @dreams.empty? %>
-    <%= render partial: "dream", collection: @dreams %>
+      <%= render partial: "dream", collection: @dreams %>
     <% else %>
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-positive">
-        </div> <!-- cd-timeline-img -->
-        <div class="cd-timeline-content text-center">
-          <%= link_to "Add your first dream", new_dream_path, class: "medium button" %>
-        </div> <!-- cd-timeline-content -->
-      </div> <!-- cd-timeline-block -->
+      <%= render partial: "empty_dream" %>
     <% end %>
   	</section>
 </div>
