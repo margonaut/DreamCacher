@@ -1,5 +1,7 @@
 $white: #FFFFFF;
 $black: #000000;
+$grey: #e7e7e7;
+$darkgrey: #b9b9b9;
 
 // *************************** SECTIONS **************************************
 
@@ -86,8 +88,30 @@ $black: #000000;
 
 .arrow {
   position: absolute;
-  width: 7vmin;
   top: 45%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  border: 2px solid $grey;
+  border-radius: 50%;
+  color: $grey;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    color: $darkgrey;
+    border-color: $darkgrey;
+    transition: color 1s ease-out;
+    transition: border-color 1s ease-out;
+  }
+
+  span {
+    position: absolute;
+    top: -5px;
+    left: 8px;
+  }
 }
 
 #arrow-left {
@@ -99,9 +123,6 @@ $black: #000000;
 }
 
 @media only screen and (min-width: 40.063em) {
-  .arrow {
-    width: 3vmin;
-  }
 }
 
 // *************************** DEMOS **************************************
