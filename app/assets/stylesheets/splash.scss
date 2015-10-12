@@ -68,15 +68,15 @@ $darkgrey: #b9b9b9;
 @media only screen and (min-width: 90.063em) {
 
   .title {
-   font-size: 5vmin;
+    font-size: 5vmin;
   }
 
   .subtitle {
-   font-size: 4vmin;
+    font-size: 4vmin;
   }
 
   .action {
-   font-size: 3vmin;
+     font-size: 3vmin;
   }
 }
 
@@ -109,8 +109,6 @@ $darkgrey: #b9b9b9;
   &:hover {
     border-color: $darkgrey;
     color: $darkgrey;
-    transition: border-color 1s ease-out;
-    transition: color 1s ease-out;
   }
 
   span {
@@ -149,6 +147,7 @@ $darkgrey: #b9b9b9;
 }
 
 @media only screen and (min-width: 40.063em) {
+  
   .text-content {
     padding-top: 70px;
 
