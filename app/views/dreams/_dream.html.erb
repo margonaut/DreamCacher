@@ -1,0 +1,12 @@
+<div class="cd-timeline-block">
+  <div class="cd-timeline-img cd-<%= dream.positivity %>">
+  </div> <!-- cd-timeline-img -->
+
+  <div class="cd-timeline-content">
+      <h2><%= dream.title %></h2>
+    <p><%= dream.snippet %></p>
+    <a href="" class="details cd-read-more show-for-medium-up" id="<%= dream.id %>">Details</a>
+    <a href="" class="expand cd-read-more show-for-small-only">Expand</a>
+    <span class="cd-date"><%= dream.date.strftime("%m/%d/%Y") %></span>
+  </div> <!-- cd-timeline-content -->
+</div> <!-- cd-timeline-block -->

@@ -1,0 +1,21 @@
+<% unless dream.nil? %>
+<div class="large-9 columns">
+  <h1 id="dream-title"><%= dream.title %></h1>
+  <p id="dream-text"><%= dream.text %></p>
+  <p>
+    <%= link_to "Edit", edit_dream_path(dream), id: "edit-link" %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link" %>
+  </p>
+</div>
+<div class="large-3 columns">
+  <h4>Themes</h4>
+  <ul id="keyword-list">
+    <% dream.dreams_keywords.each do |keyword|  %>
+      <li class="dream-key">
+        <%= keyword.keyword.text %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<% else %>
+<h1>Your journal is empty!</h1>
+<% end %>

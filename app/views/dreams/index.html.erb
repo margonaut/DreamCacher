@@ -1,25 +1,20 @@
 <div class="timeline panel medium-6 large-4 columns">
-  <%= render 'timeline' %>
+  <section id="cd-timeline" class="cd-container">
+    <% unless @dreams.empty? %>
+    <%= render partial: "dream", collection: @dreams %>
+    <% else %>
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-positive">
+        </div> <!-- cd-timeline-img -->
+        <div class="cd-timeline-content text-center">
+          <%= link_to "Add your first dream", new_dream_path, class: "medium button" %>
+        </div> <!-- cd-timeline-content -->
+      </div> <!-- cd-timeline-block -->
+    <% end %>
+  	</section>
 </div>
 <div class="dream panel medium-6 large-8 columns show-for-medium-up">
   <div class="row">
-    <div class="large-9 columns">
-      <h1 id="dream-title"><%= @active_dream.title %></h1>
-      <p id="dream-text"><%= @active_dream.text %></p>
-      <p>
-        <%= link_to "Edit", edit_dream_path(@active_dream), id: "edit-link" %> | <%= link_to 'Delete Dream', dream_path(@active_dream), method: :delete, id: "delete-link" %>
-      </p>
-    </div>
-    <div class="large-3 columns">
-      <h4>Themes</h4>
-      <ul id="keyword-list">
-        <% @active_dream.dreams_keywords.each do |keyword|  %>
-          <li class="dream-key">
-            <%= keyword.keyword.text %>
-          </li>
-        <% end %>
-      </ul>
-
-    </div>
+    <%= render partial: "active_dream", object: @dreams.first, as: :dream %>
   </div>
 </div>

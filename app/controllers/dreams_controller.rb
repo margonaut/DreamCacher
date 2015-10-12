@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
 
   def index
     @dreams = Dream.where(user: current_user).order(:date).reverse_order
-    @active_dream = @dreams.first
+    # @active_dream = @dreams.first
   end
 
   def new
