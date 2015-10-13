@@ -39,6 +39,7 @@ class Dream < ActiveRecord::Base
   end
 
   def dream_analysis
+    binding.pry
     alchemyapi = AlchemyAPI.new
     keyword_response = alchemyapi.keywords('text', text, 'sentiment' => 1)
     sentiment_response = alchemyapi.sentiment('text', text, { 'sentiment'=>1 })
@@ -48,6 +49,7 @@ class Dream < ActiveRecord::Base
     else
       puts 'Error in sentiment extraction call: ' + keyword_response['statusInfo']
     end
+    binding.pry
   end
 
   private

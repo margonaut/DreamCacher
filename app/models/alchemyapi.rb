@@ -72,17 +72,12 @@ class AlchemyAPI
 
 	@@BASE_URL = 'http://access.alchemyapi.com/calls'
 
-
 	def initialize()
 		begin
 			key = ENV['ALCHEMYAPI_KEY']
 			@apiKey = key
 		end
 	end
-
-
-
-
 
 	# Calculates the sentiment for text, a URL or HTML.
 	# For an overview, please refer to: http://www.alchemyapi.com/products/features/sentiment-analysis/
@@ -108,7 +103,6 @@ class AlchemyAPI
 		options[flavor] = data
 		return analyze(@@ENDPOINTS['sentiment'][flavor], options)
 	end
-
 
 	# Calculates the targeted sentiment for text, a URL or HTML.
 	# For an overview, please refer to: http://www.alchemyapi.com/products/features/sentiment-analysis/
@@ -140,7 +134,6 @@ class AlchemyAPI
 		options['target'] = target
 		return analyze(@@ENDPOINTS['sentiment_targeted'][flavor], options)
 	end
-
 
 	# Extracts the keywords from text, a URL or HTML.
 	# For an overview, please refer to: http://www.alchemyapi.com/products/features/keyword-extraction/
@@ -203,7 +196,6 @@ class AlchemyAPI
 		options[flavor] = data
 		return analyze(@@ENDPOINTS['combined'][flavor], options)
 	end
-
 
 	private
 
