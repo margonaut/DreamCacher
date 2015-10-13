@@ -41,7 +41,7 @@ class Dream < ActiveRecord::Base
   def dream_analysis
     alchemyapi = AlchemyAPI.new
     keyword_response = alchemyapi.keywords('text', text, 'sentiment' => 1)
-    sentiment_response = alchemyapi.sentiment('text', text, 'sentiment' => 1 )
+    sentiment_response = alchemyapi.sentiment('text', text, 'sentiment' => 1)
     if sentiment_response['status'] == 'OK' && keyword_response['status'] == 'OK'
       update_sentiment(sentiment_response)
       update_keywords(keyword_response)
