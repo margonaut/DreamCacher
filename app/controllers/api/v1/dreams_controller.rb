@@ -2,8 +2,12 @@ module Api
   module V1
     class DreamsController < ApiController
       def index
-        @dreams = Dream.all
-        render json: @dreams
+        @dreams = Dream.where(user: current_user)
+        if params["chart"] == "pie"
+          render json: @dreams.pie_data
+        else
+          render json: @dreams
+        end
       end
 
       def show
