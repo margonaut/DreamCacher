@@ -11,9 +11,7 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-    @dream.sentiment = @dream.get_sentiment
     if @dream.save
-      @dream.keyword_analysis
       flash[:notice] = "Dream saved"
       redirect_to dreams_path
     else
@@ -28,8 +26,6 @@ class DreamsController < ApplicationController
 
   def update
     @dream = Dream.find(params[:id])
-    @dream.sentiment = @dream.get_sentiment
-
     if @dream.update(dream_params)
       flash[:notice] = "Dream updated"
       redirect_to dreams_path
