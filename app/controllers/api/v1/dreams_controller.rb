@@ -3,8 +3,8 @@ module Api
     class DreamsController < ApiController
       def index
         @dreams = Dream.where(user: current_user)
-        if params["chart"] == "pie"
-          render json: @dreams.pie_data
+        if params["dashboard"] == "analytics"
+          render json: AnalyticsDashboard.new(@dreams)
         else
           render json: @dreams
         end
