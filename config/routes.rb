@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :dreams, only: [:index, :show]
+      resource :analytics_dashboard, only: [:show]
     end
   end
 end

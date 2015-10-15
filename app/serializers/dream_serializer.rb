@@ -2,8 +2,8 @@ class DreamSerializer < ActiveModel::Serializer
   has_many :dreams_keywords
 
   attributes :id, :title, :text, :sentiment,
-             :date, :user, :mixed, :nice_date
-             :positivity, :positive?
+             :date, :user, :mixed, :nice_date,
+             :keyword_sentiment_count
 
   def user
     object.user.email
@@ -11,6 +11,15 @@ class DreamSerializer < ActiveModel::Serializer
 
   def nice_date
     object.date.strftime("%m/%d/%Y")
+  end
+
+  def keyword_sentiment_count
+    positive = dreams_keywords.count { |keyword| keyword.positive? }
+    negative = dreams_keywords.count { |keyword| keyword.negative? }
+    neg_mixed = dreams_keywords.count { |keyword| keyword.mixed? && keyword.sentiment < 0 }
+    pos_mixed = dreams_keywords.count { |keyword| keyword.mixed? && keyword.sentiment > 0 }
+    result = {positive: positive, negative: negative, neg_mixed: neg_mixed, pos_mixed: pos_mixed}
+
   end
 
   def mixed?

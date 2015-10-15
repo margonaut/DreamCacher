@@ -36,6 +36,7 @@ $(".details").on("click", function(event) {
     dataType: "json"
   })
   .done(function(data){
+    debugger;
     changeDream(data.dream);
   });
 });
