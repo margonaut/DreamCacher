@@ -15,6 +15,7 @@
 //= require foundation
 //= require vendor/modernizr
 //= require highcharts/highcharts.js
+//= require jquery-readyselector
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

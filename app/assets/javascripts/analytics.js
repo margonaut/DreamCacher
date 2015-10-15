@@ -1,11 +1,11 @@
 $(function () {
-  $(document).ready(function () {
+  $(".analytics.index").ready(function () {
     var sentiments = ["Positive", "Negative", "Neutral", "Mixed"];
     var percentages = [25, 25, 25, 25];
 
     $.ajax({
       method: "GET",
-      url: "api/v1/analytics_dashboard",
+      url: "/api/v1/analytics_dashboard",
       dataType: "json"
     })
 
@@ -60,7 +60,7 @@ $(function () {
             }
         },
         legend: {
-            reversed: true
+            reversed: false
         },
         plotOptions: {
             series: {
@@ -68,9 +68,7 @@ $(function () {
             }
         },
         series: charts.stacked_bar.data
-
-        // series: data["stacked-bar"]["data"]
-    });
+      });
     });
   });
 });

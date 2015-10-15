@@ -37,7 +37,6 @@ class DreamAnalyzer
                                      relevance: relevance,
                                      sentiment: sentiment,
                                      mixed: mixed)
-      binding.pry
     end
   end
 end
