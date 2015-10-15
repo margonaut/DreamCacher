@@ -1,6 +1,6 @@
 class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
   # has_many :dreams
-  attributes :good_dreams, :dream_dates, :pie_chart
+  attributes :good_dreams, :dream_dates, :pie_chart, :stacked_bar
 
   def good_dreams
     object.dreams.map do |dream|
@@ -38,12 +38,26 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
 
   def stacked_bar
     dates = dream_dates
-    keyword_data = []
+    keyword_data = [{
+        name: 'Negative Mixed',
+        data: []
+    }, {
+        name: 'Negative',
+        data: []
+    }, {
+        name: ' Positive Mixed',
+        data: []
+    }, {
+        name: 'Positive',
+        data: []
+    }]
     good_dreams.each do |dream|
-      thing = dream.keyword_sentiment_count
-      binding.pry
+      count = dream.keyword_sentiment_count
+      keyword_data.each_with_index do |sentiment, index|
+        sentiment[:data] << count[index]
+      end
     end
-    # { dates: dates, data: keyword_data }
+    { dates: dates, data: keyword_data }
   end
 
   private
