@@ -12,7 +12,7 @@ $(function () {
 
     .done(function(data){
       debugger;
-    });
+
       // Build the chart
       $('#pie-container').highcharts({
           chart: {
@@ -40,22 +40,9 @@ $(function () {
           series: [{
               name: "Dreams",
               colorByPoint: true,
-              data: [{
-                  name: "Positive",
-                  y: 56.33
-              }, {
-                  name: "Negative",
-                  y: 24.03,
-                  sliced: true,
-                  selected: true
-              }, {
-                  name: "Neutral",
-                  y: 10.38
-              }, {
-                  name: "Mixed",
-                  y: 4.77
-              }]
+              data: data["_pie_chart_data"]
           }]
       });
+    });
   });
 });
