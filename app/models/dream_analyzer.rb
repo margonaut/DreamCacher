@@ -4,8 +4,8 @@ class DreamAnalyzer
 
   def self.analyze_dream(dream)
     alchemyapi = AlchemyAPI.new
-    keyword_response = alchemyapi.keywords('text', dream.text, 'sentiment' => 1)
-    sentiment_response = alchemyapi.sentiment('text', dream.text, 'sentiment' => 1)
+    keyword_response = alchemyapi.keywords('text', dream.text, 'sentiment': 1)
+    sentiment_response = alchemyapi.sentiment('text', dream.text, 'sentiment': 1)
     if sentiment_response['status'] == 'OK' && keyword_response['status'] == 'OK'
       self.update_sentiment(sentiment_response, dream)
       self.update_keywords(keyword_response, dream)

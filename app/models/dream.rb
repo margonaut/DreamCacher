@@ -1,5 +1,4 @@
 class Dream < ActiveRecord::Base
-  # after_save :dream_analysis, if: :text_changed?
   belongs_to :user
   has_many :dreams_keywords
   has_many :keywords, through: :dreams_keywords
@@ -33,6 +32,38 @@ class Dream < ActiveRecord::Base
       "neutral"
     else
       "problem"
+    end
+  end
+
+  def mixed?
+    if mixed == true
+      return true
+    else
+      return false
+    end
+  end
+
+  def positive?
+    if sentiment.to_f > 0 && !mixed?
+      return true
+    else
+      return false
+    end
+  end
+
+  def negative?
+    if sentiment.to_f < 0 && !mixed?
+      return true
+    else
+      return false
+    end
+  end
+
+  def neutral?
+    if sentiment.to_f == 0 && !mixed?
+      return true
+    else
+      return false
     end
   end
 end

@@ -7,7 +7,7 @@ $(function () {
       method: "GET",
       url: "/api/v1/dreams",
       dataType: "json",
-      data: {chart: "pie"}
+      data: {dashboard: "analytics"}
     })
 
     .done(function(data){

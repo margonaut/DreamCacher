@@ -1,35 +1,47 @@
-class AnalyticsDashboardSerializer < ActiveModel::Serializer
-  attributes :pie_chart
+# refactoring this file to a PORO in models
 
-  def initialize(dreams)
-    @dreams = dreams
-    binding.pry
-  end
+# class AnalyticsDashboardSerializer < ActiveModel::Serializer
+#   attributes :dreams
+#
+#   def initialize(dreams)
+#     @dreams = dreams
+#   end
 
-  def pie_chart
-    percentages = calculate_pie_data
-    data = [{
-        name: "Positive",
-        y: percentages["positive"]
-    }, {
-        name: "Negative",
-        y: percentages["negative"],
-        sliced: true,
-        selected: true
-    }, {
-        name: "Neutral",
-        y: percentages["neutral"]
-    }, {
-        name: "Mixed",
-        y: percentages["mixed"]
-    }]
-  end
-
-  def percentage_positivity(type)
-    # write a method that uses the 'type' of sentiment
-    # and the @current_dreams to find the percentage of which
-    #belong to that type
-
-    { positive: num, negative: num, neutral: num, mixed: mixed_num }
-  end
-end
+  # # def self.assemble_data(dreams)
+  #
+  # def pie_chart
+  #   percentages = calculate_sentiment_percentages
+  #   data = [{
+  #       name: "Positive",
+  #       y: percentages["positive"]
+  #   }, {
+  #       name: "Negative",
+  #       y: percentages["negative"],
+  #       sliced: true,
+  #       selected: true
+  #   }, {
+  #       name: "Neutral",
+  #       y: percentages["neutral"]
+  #   }, {
+  #       name: "Mixed",
+  #       y: percentages["mixed"]
+  #   }]
+  # end
+  #
+  # def percentage(number, total)
+  #   (number/total) * 100
+  # end
+  #
+  # def calculate_sentiment_percentages
+  #   dream_array = @dreams.to_a
+  #   total = @dreams.count.to_f
+  #   mixed = dream_array.count { |dream| dream.mixed? }
+  #   positive = dream_array.count { |dream| dream.positive? }
+  #   negative = dream_array.count { |dream| dream.negative? }
+  #   neutral = dream_array.count { |dream| dream.neutral? }
+  #   result = { positive: percentage(positive.to_f, total),
+  #              negative: percentage(negative.to_f, total),
+  #              neutral: percentage(neutral.to_f, total),
+  #              mixed: percentage(mixed.to_f, total) }
+  # end
+# end

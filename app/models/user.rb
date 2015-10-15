@@ -12,10 +12,10 @@ class User < ActiveRecord::Base
   private
 
   def first_dream
-    Dream.create(user: self, date: Date.today,
-                 sentiment: "0.8", title: "Welcome to your Dream Journal",
-                 text: "This is where your dreams are stored! Scroll
-                       through your journal timeline to see the
-                       details of each dream.")
+    dream = Dream.create(user: self, date: Date.today,
+                         sentiment: "0.8", title: "Welcome to your Dream Journal",
+                         text: "This is where your dreams are stored! Scroll
+                         through your journal timeline to see the
+                         details of each dream.")
   end
 end
