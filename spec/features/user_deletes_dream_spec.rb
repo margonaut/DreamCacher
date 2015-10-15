@@ -24,7 +24,6 @@ feature 'user deletes a dream', %(
     sign_in(user)
 
     click_link "Delete Dream"
-    save_and_open_page
     expect(page).to_not have_content("Welcome to your Dream Journal")
   end
 end
