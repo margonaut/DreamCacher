@@ -1,3 +1,18 @@
+var dateParser = function(dateString) {
+  var date = new Date(dateString);
+  var newDate = Date.parse(date);
+  return newDate
+}
+
+var formatDates = function(data) {
+  newData = []
+  $.each( data, function(index, value) {
+    value[0] = dateParser(value[0]);
+    newData.push(value);
+  })
+  return newData
+}
+
 $(function () {
   $(".analytics.index").ready(function () {
 
@@ -8,10 +23,54 @@ $(function () {
     })
 
     .done(function(data){
-      charts = data.analytics_dashboard_organizer
+      var charts = data.analytics_dashboard_organizer
+      var timelineData = formatDates(charts.timeline_chart)
       // Build the chart
-      var scatterKeywords = charts.scatter_plot.keywords
-      var keywordCounter = 0
+      $('#timeline-container').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Dream Sentiment Over Time'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: { // don't display the dummy year
+                month: '%b',
+                year: '%B'
+            },
+            title: {
+                text: 'Date'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Dream Sentiment'
+            },
+            min: -1
+        },
+        tooltip: {
+            headerFormat: '<b>{point.x:%b %e, %Y}</b><br>',
+            pointFormat: '{point.y}'
+        },
+
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+
+        series: [{
+            name: "Dream Sentiment",
+            data: timelineData
+        }]
+    });
+
       $('#scatter-container').highcharts({
         chart: {
             type: 'scatter',
