@@ -1,8 +1,19 @@
 .chart {
+  width: 100%;
+}
+
+.stacked-bar {
+  height: 650px;
+}
+
+.pie {
 
 }
 
-#pie-container {
-  width: 100%;
-  height: 300px;
+.scatter {
+// style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"
+}
+
+.timeline-chart {
+  // style="min-width: 310px; height: 400px; margin: 0 auto"
 }

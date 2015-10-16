@@ -1,5 +1,6 @@
 class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
-  attributes :good_dreams, :dream_dates, :pie_chart, :stacked_bar, :scatter_plot
+  attributes :good_dreams, :dream_dates, :pie_chart,
+             :stacked_bar, :scatter_plot, :timeline_chart
 
   def good_dreams
     object.dreams.map do |dream|
@@ -13,6 +14,15 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
       dates << dream.nice_date
     end
     dates
+  end
+
+  def timeline_chart
+    data = []
+    ordered_dreams = good_dreams.sort_by { |x| x.date }
+    ordered_dreams.each do |dream|
+      data << [dream.date, dream.sentiment.to_f]
+    end
+    data
   end
 
   def scatter_plot
