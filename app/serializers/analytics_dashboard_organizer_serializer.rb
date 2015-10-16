@@ -39,19 +39,19 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
   def pie_chart
     @_pie_chart_data ||= begin
       [{
-            name: "Positive",
-            y: positive_result
+          name: "Positive",
+          y: positive_result
       }, {
-            name: "Negative",
-            y: negative_result,
-            sliced: true,
-            selected: true
+          name: "Negative",
+          y: negative_result,
+          sliced: true,
+          selected: true
       }, {
-            name: "Neutral",
-            y: neutral_result
+          name: "Neutral",
+          y: neutral_result
       }, {
-            name: "Mixed",
-            y: mixed_result
+          name: "Mixed",
+          y: mixed_result
       }]
     end
   end
@@ -59,18 +59,18 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
   def stacked_bar
     dates = dream_dates
     keyword_data = [{
-                       name: 'Negative Mixed',
-                       data: []
-                    }, {
-                          name: 'Negative',
-                          data: []
-                    }, {
-                          name: ' Positive Mixed',
-                          data: []
-                    }, {
-                          name: 'Positive',
-                          data: []
-                    }]
+        name: 'Negative Mixed',
+        data: []
+    }, {
+        name: 'Negative',
+        data: []
+    }, {
+        name: ' Positive Mixed',
+        data: []
+    }, {
+        name: 'Positive',
+        data: []
+    }]
     good_dreams.each do |dream|
       count = dream.keyword_sentiment_count
       keyword_data.each_with_index do |sentiment, index|
