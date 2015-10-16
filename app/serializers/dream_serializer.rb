@@ -20,12 +20,12 @@ class DreamSerializer < ActiveModel::Serializer
   end
 
   def keyword_sentiment_count
-    positive = good_keywords.count { |keyword| keyword.positive? }
-    negative = good_keywords.count { |keyword| keyword.negative? }
-    neg_mixed = good_keywords.count { |keyword| keyword.mixed? && keyword.sentiment.to_f < 0 }
-    pos_mixed = good_keywords.count { |keyword| keyword.mixed? && keyword.sentiment.to_f > 0 }
+    k = good_keywords
+    positive = good_keywords.count { |k| k.positive? }
+    negative = good_keywords.count { |k| k.negative? }
+    neg_mixed = good_keywords.count { |k| k.mixed? && k.sentiment.to_f < 0 }
+    pos_mixed = good_keywords.count { |k| k.mixed? && k.sentiment.to_f > 0 }
     [-neg_mixed, -negative, pos_mixed, positive]
-    # {positive: positive, negative: negative, neg_mixed: neg_mixed, pos_mixed: pos_mixed}
   end
 
   def mixed?
