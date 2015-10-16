@@ -1,17 +1,17 @@
 var dateParser = function(dateString) {
   var date = new Date(dateString);
   var newDate = Date.parse(date);
-  return newDate
+  return newDate;
 }
 
 var formatDates = function(data) {
-  newData = []
+  var newData = []
   $.each( data, function(index, value) {
     value[0] = dateParser(value[0]);
     newData.push(value);
   })
   return newData;
-};
+}
 
 $(function () {
   $('.analytics.index').ready(function () {
