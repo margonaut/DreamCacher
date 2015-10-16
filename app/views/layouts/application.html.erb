@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 <div class="background">
   <%= render "layouts/alerts" %>
   <div class="dashboard row">

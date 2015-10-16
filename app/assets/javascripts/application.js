@@ -14,6 +14,10 @@
 //= require jquery_ujs
 //= require foundation
 //= require vendor/modernizr
+//= require highcharts/highcharts.js
+//= require jquery-readyselector
+//= require foundation-datepicker.min.js
+//= require foundation-datepicker.js
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

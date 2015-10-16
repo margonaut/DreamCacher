@@ -7,12 +7,12 @@ feature 'user edits a dream', %(
 ) do
 
   # Acceptance Criteria
-  # [ ] - User can visit edit page for a dream instance
-  # [ ] - User can change dream content, title, and time
+  # [X] - User can visit edit page for a dream instance
+  # [X] - User can change dream content, title, and date
   # [ ] - Content changes update keyword analysis
   # [ ] - Title changes are reflected on the show page
   # [ ] - Time changes are reflected in the timeline
-  # [ ] - User cannot edit a dream with invalid information
+  # [X] - User cannot edit a dream with invalid information
 
   scenario 'User visits the edit dream page' do
     user = FactoryGirl.create(:user)
@@ -52,5 +52,9 @@ feature 'user edits a dream', %(
     click_button "Update"
 
     expect(page).to have_content("Text can't be blank")
+  end
+
+  scenario "keyword analysis changes upon update" do
+
   end
 end
