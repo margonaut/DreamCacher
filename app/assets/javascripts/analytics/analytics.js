@@ -10,16 +10,16 @@ var formatDates = function(data) {
     value[0] = dateParser(value[0]);
     newData.push(value);
   })
-  return newData
-}
+  return newData;
+};
 
 $(function () {
-  $(".analytics.index").ready(function () {
+  $('.analytics.index').ready(function () {
 
     $.ajax({
-      method: "GET",
-      url: "/api/v1/analytics_dashboard",
-      dataType: "json"
+      method: 'GET',
+      url: '/api/v1/analytics_dashboard',
+      dataType: 'json'
     })
 
     .done(function(data){
@@ -66,7 +66,7 @@ $(function () {
         },
 
         series: [{
-            name: "Dream Sentiment",
+            name: 'Dream Sentiment',
             data: timelineData
         }]
     });
@@ -87,11 +87,11 @@ $(function () {
           formatter: function (args) {
             var this_point_index = this.series.data.indexOf( this.point );
             var seriesName = this.point.series.name
-            if (seriesName == "Positive") {
+            if (seriesName == 'Positive') {
               return charts.scatter_plot.positive_keywords[this_point_index]
-            } else if (seriesName == "Negative") {
+            } else if (seriesName == 'Negative') {
               return charts.scatter_plot.negative_keywords[this_point_index]
-            } else if (seriesName == "Mixed") {
+            } else if (seriesName == 'Mixed') {
               return charts.scatter_plot.mixed_keywords[this_point_index]
             }
         }
@@ -179,7 +179,7 @@ $(function () {
               }
           },
           series: [{
-              name: "Dreams",
+              name: 'Dreams',
               colorByPoint: true,
               data: charts.pie_chart
           }]
