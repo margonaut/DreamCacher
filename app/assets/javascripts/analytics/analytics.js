@@ -10,10 +10,8 @@ $(function () {
     .done(function(data){
       charts = data.analytics_dashboard_organizer
       // Build the chart
-      // debugger;
       var scatterKeywords = charts.scatter_plot.keywords
       var keywordCounter = 0
-      // debugger;
       $('#scatter-container').highcharts({
         chart: {
             type: 'scatter',
@@ -23,8 +21,22 @@ $(function () {
             text: 'Keyword Scatter'
         },
         subtitle: {
-            text: 'Source: Heinz  2003'
+            text: ''
         },
+        tooltip: {
+          shared: true,
+          formatter: function (args) {
+            var this_point_index = this.series.data.indexOf( this.point );
+            var seriesName = this.point.series.name
+            if (seriesName == "Positive") {
+              return charts.scatter_plot.positive_keywords[this_point_index]
+            } else if (seriesName == "Negative") {
+              return charts.scatter_plot.negative_keywords[this_point_index]
+            } else if (seriesName == "Mixed") {
+              return charts.scatter_plot.mixed_keywords[this_point_index]
+            }
+        }
+      },
         xAxis: {
             title: {
                 enabled: true,
@@ -67,12 +79,6 @@ $(function () {
                         }
                     }
                 },
-
-                tooltip: {
-                    headerFormat: '{point.toString()}',
-                    pointFormat: ''
-                    // pointFormat: '{point.x} cm, {point.y} kg'
-                }
             }
         },
         series: [{

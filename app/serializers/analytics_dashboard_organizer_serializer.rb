@@ -17,18 +17,20 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
   end
 
   def scatter_plot
-    data = { positive: [], negative: [], mixed: [], keywords: [] }
+    data = { positive: [], negative: [], mixed: [],
+             positive_keywords: [], negative_keywords: [],
+             mixed_keywords: [] }
     good_dreams.each do |dream|
       dream.good_keywords.each do |keyword|
         if keyword.positive?
           data[:positive] << [keyword.relevance.to_f, keyword.sentiment.to_f]
-          data[:keywords] << keyword.text
+          data[:positive_keywords] << keyword.text
         elsif keyword.negative?
           data[:negative] << [keyword.relevance.to_f, keyword.sentiment.to_f]
-          data[:keywords] << keyword.text
+          data[:negative_keywords] << keyword.text
         elsif keyword.mixed?
           data[:mixed] << [keyword.relevance.to_f, keyword.sentiment.to_f]
-          data[:keywords] << keyword.text
+          data[:mixed_keywords] << keyword.text
         end
       end
     end
