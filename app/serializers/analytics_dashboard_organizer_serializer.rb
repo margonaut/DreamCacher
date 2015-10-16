@@ -1,5 +1,4 @@
 class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
-  # has_many :dreams
   attributes :good_dreams, :dream_dates, :pie_chart, :stacked_bar, :scatter_plot
 
   def good_dreams
