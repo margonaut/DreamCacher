@@ -1,6 +1,6 @@
 class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
   # has_many :dreams
-  attributes :good_dreams, :dream_dates, :pie_chart, :stacked_bar
+  attributes :good_dreams, :dream_dates, :pie_chart, :stacked_bar, :scatter_plot
 
   def good_dreams
     object.dreams.map do |dream|
@@ -14,6 +14,25 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
       dates << dream.nice_date
     end
     dates
+  end
+
+  def scatter_plot
+    data = { positive: [], negative: [], mixed: [], keywords: [] }
+    good_dreams.each do |dream|
+      dream.good_keywords.each do |keyword|
+        if keyword.positive?
+          data[:positive] << [keyword.relevance.to_f, keyword.sentiment.to_f]
+          data[:keywords] << keyword.text
+        elsif keyword.negative?
+          data[:negative] << [keyword.relevance.to_f, keyword.sentiment.to_f]
+          data[:keywords] << keyword.text
+        elsif keyword.mixed?
+          data[:mixed] << [keyword.relevance.to_f, keyword.sentiment.to_f]
+          data[:keywords] << keyword.text
+        end
+      end
+    end
+    data
   end
 
   def pie_chart
