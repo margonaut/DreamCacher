@@ -157,19 +157,19 @@ $(function () {
     });
       $('#pie-container').highcharts({
           chart: {
-              plotBackgroundColor: null,
-              plotBorderWidth: null,
+              backgroundColor: null,
               plotShadow: false,
               type: 'pie'
           },
           title: {
-              text: 'Dream Sentiment'
+              text: ''
           },
           tooltip: {
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
           },
           plotOptions: {
               pie: {
+                  borderColor: '#000000',
                   allowPointSelect: true,
                   cursor: 'pointer',
                   dataLabels: {

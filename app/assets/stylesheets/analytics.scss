@@ -15,15 +15,12 @@
 }
 
 .timeline-chart {
+  height: 250px;
   // style="min-width: 310px; height: 400px; margin: 0 auto"
 }
 
-.factoid {
-  margin-bottom: 30px;
-  overflow: hidden;
-}
-
-.scatter-thing {
-      padding-top: 40px;
-  overflow: hidden;
+.fit {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }

@@ -9,11 +9,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
+<div class="background">
   <%= render "layouts/alerts" %>
-  <div class="row">
+  <div class="dashboard row">
     <%= render "layouts/nav" %>
+    <div class="content">
+          <%= yield %>
+      </div>
   </div>
-    <%= yield %>
+</div>
+
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 </body>
