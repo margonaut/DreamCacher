@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:300,400);
 
+.style {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+}
+
 .chart {
   width: 100%;
 }
@@ -39,13 +44,19 @@
   background-color: #333333;
 }
 
-.factoids {
+.heading {
   color: white;
 
   p {
     margin: 0;
-    line-height: 4.5em;
+    line-height: 4em;
+    font-weight: 200;
+    font-size: 1.13em;
   }
+}
+
+.accent-text {
+  color: #EE5F77;
 }
 
 .accent {
