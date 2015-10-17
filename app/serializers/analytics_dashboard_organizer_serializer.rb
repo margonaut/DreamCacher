@@ -53,15 +53,7 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
             y: positive_result
       }, {
             name: "Negative",
-            y: negative_result,
-            sliced: true,
-            selected: true
-      }, {
-            name: "Neutral",
-            y: neutral_result
-      }, {
-            name: "Mixed",
-            y: mixed_result
+            y: negative_result
       }]
     end
   end
@@ -110,22 +102,6 @@ class AnalyticsDashboardOrganizerSerializer < ActiveModel::Serializer
 
   def negative_count
     good_dreams.count { |dream| dream.negative? }.to_f
-  end
-
-  def mixed_result
-    percentage(mixed_count, total)
-  end
-
-  def mixed_count
-    good_dreams.count { |dream| dream.mixed? }.to_f
-  end
-
-  def neutral_result
-    percentage(neutral_count, total)
-  end
-
-  def neutral_count
-    good_dreams.count { |dream| dream.neutral? }.to_f
   end
 
   def total
