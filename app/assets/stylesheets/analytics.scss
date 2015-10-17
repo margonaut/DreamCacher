@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:300,400);
 
+$accent: #30385f;
+$dark: #E3E3E3;
+$medium: #EBEBEB;
+$light: #F5F5F5;
+
 .style {
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
@@ -33,62 +38,41 @@
 }
 
 .dark {
-  background-color: #262626;
+  background-color: $dark;
 }
 
 .medium {
-  background-color: #2B2B2B;
+  background-color: $medium;
 }
 
 .light {
-  background-color: #333333;
+  background-color: $light;
 }
 
 .heading {
-  color: white;
+  color: black;
+}
 
-  p {
-    margin: 0;
-    line-height: 4em;
-    font-weight: 200;
-    font-size: 1.13em;
+.fancy {
+  margin: 0;
+  line-height: 4em;
+  font-weight: 200;
+  font-size: 1.13em;
+  text-transform: uppercase;
+
+  &.header {
+    padding-left: 15px;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    width: 100%;
   }
 }
 
 .accent-text {
-  color: #EE5F77;
+  color: $accent;
 }
 
 .accent {
-  background: rgba(238,95,119,1);
-  background: -moz-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(238,95,119,1)), color-stop(100%, rgba(187,153,238,1)));
-  background: -webkit-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
-  background: -o-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
-  background: -ms-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
-  background: linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee5f77', endColorstr='#bb99ee', GradientType=1 );
+  background-color: #FFFFFF;
 }
-
-.header-pic {
-  height: 200px;
-  background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
-}
-
-.picture {
-  height: 367px;
-  width: 367px;
-  background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-// .picture {
-//   background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   overflow: auto;
-// }

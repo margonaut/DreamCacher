@@ -1,3 +1,11 @@
+Highcharts.setOptions({
+    chart: {
+        style: {
+            fontFamily: 'Nunito'
+        }
+    }
+});
+
 var dateParser = function(dateString) {
   var date = new Date(dateString);
   var newDate = Date.parse(date);
@@ -31,7 +39,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: ''
+            text: 'DREAM SENTIMENT OVER TIME'
         },
         subtitle: {
             text: ''
@@ -78,7 +86,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: ''
+            text: 'KEYWORD SCATTER'
         },
         subtitle: {
             text: ''
@@ -163,7 +171,7 @@ $(function () {
               type: 'pie'
           },
           title: {
-              text: ''
+              text: 'DREAM SENTIMENT PROPORTION'
           },
           tooltip: {
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -192,7 +200,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: ''
+            text: 'KEYWORD SENTIMENT PROPORTION'
         },
         xAxis: {
 

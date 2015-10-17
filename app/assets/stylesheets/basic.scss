@@ -9,20 +9,15 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  height: 100%;
+  background: url("http://i.imgur.com/WmKOzNn.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: auto;
 }
 //
-// .background {
-//   display: flex;
-//   flex-flow: column;
-//   height: 100%;
-//   background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat center center fixed;
-//   -webkit-background-size: cover;
-//   -moz-background-size: cover;
-//   -o-background-size: cover;
-//   background-size: cover;
-//   overflow: auto;
-// }
 
 /************** FIXES *******************************/
 
