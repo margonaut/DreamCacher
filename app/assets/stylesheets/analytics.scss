@@ -1,13 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:300,400);
+
 .chart {
   width: 100%;
 }
 
 .stacked-bar {
-  height: 650px;
+  height: 767px;
 }
 
 .pie {
-
+  height: 367px;
 }
 
 .scatter {
@@ -15,7 +17,7 @@
 }
 
 .timeline-chart {
-  height: 250px;
+  height: 288px;
   // style="min-width: 310px; height: 400px; margin: 0 auto"
 }
 
@@ -37,15 +39,45 @@
   background-color: #333333;
 }
 
+.factoids {
+  color: white;
+
+  p {
+    margin: 0;
+    line-height: 4.5em;
+  }
+}
+
 .accent {
-  background-color: #EE5F77;
+  background: rgba(238,95,119,1);
+  background: -moz-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(238,95,119,1)), color-stop(100%, rgba(187,153,238,1)));
+  background: -webkit-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
+  background: linear-gradient(45deg, rgba(238,95,119,1) 0%, rgba(187,153,238,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee5f77', endColorstr='#bb99ee', GradientType=1 );
+}
+
+.header-pic {
+  height: 200px;
+  background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
 }
 
 .picture {
-  background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat center center fixed;
+  height: 367px;
+  width: 367px;
+  background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: auto;
 }
+// .picture {
+//   background: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b") no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   overflow: auto;
+// }

@@ -15,7 +15,6 @@ var formatDates = function(data) {
 
 $(function () {
   $('.analytics.index').ready(function () {
-
     $.ajax({
       method: 'GET',
       url: '/api/v1/analytics_dashboard',
@@ -32,7 +31,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: 'Dream Sentiment Over Time'
+            text: ''
         },
         subtitle: {
             text: ''
@@ -79,7 +78,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: 'Keyword Scatter'
+            text: ''
         },
         subtitle: {
             text: ''
@@ -193,7 +192,7 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: 'Keyword Sentiment Proportion'
+            text: ''
         },
         xAxis: {
 
