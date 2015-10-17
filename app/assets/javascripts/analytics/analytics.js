@@ -28,7 +28,8 @@ $(function () {
       // Build the chart
       $('#timeline-container').highcharts({
         chart: {
-            type: 'spline'
+            type: 'spline',
+            backgroundColor: null
         },
         title: {
             text: 'Dream Sentiment Over Time'
@@ -74,7 +75,8 @@ $(function () {
       $('#scatter-container').highcharts({
         chart: {
             type: 'scatter',
-            zoomType: 'xy'
+            zoomType: 'xy',
+            backgroundColor: null
         },
         title: {
             text: 'Keyword Scatter'
@@ -187,7 +189,8 @@ $(function () {
 
       $('#stacked-bar-container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'bar',
+            backgroundColor: null
         },
         title: {
             text: 'Keyword Sentiment Proportion'
