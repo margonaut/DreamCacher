@@ -170,6 +170,7 @@ $(function () {
               plotShadow: false,
               type: 'pie'
           },
+          colors: ['#30385f', '#D2ACAF'],
           title: {
               text: 'DREAM SENTIMENT PROPORTION'
           },
