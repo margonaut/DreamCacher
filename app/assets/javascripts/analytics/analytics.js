@@ -38,7 +38,7 @@ $(function () {
             type: 'spline',
             backgroundColor: null
         },
-        colors: ['#30385f'],
+        colors: ['#792C63'],
         title: {
             text: 'DREAM SENTIMENT OVER TIME',
             align: 'center',
@@ -92,7 +92,7 @@ $(function () {
             marker: {
                     states: {
                         hover: {
-                            fillColor: '#D2ACAF',
+                            fillColor: '#56AA9E',
                         }
                     }
                 },
@@ -175,12 +175,12 @@ $(function () {
         },
         series: [{
             name: 'Negative',
-            color: 'rgba(119, 152, 191, .5)',
+            color: 'rgba(121, 44, 99, .5)',
             data: charts.scatter_plot.negative
 
         }, {
             name: 'Positive',
-            color: 'rgba(223, 83, 83, .5)',
+            color: 'rgba(121, 172, 174, .5)',
             data: charts.scatter_plot.positive
         }, {
             name: 'Mixed',
@@ -194,7 +194,7 @@ $(function () {
               plotShadow: false,
               type: 'pie'
           },
-          colors: ['#D2ACAF', '#30385f'],
+          colors: ['#56AA9E', '#792C63'],
           title: {
               text: 'DREAM SENTIMENT BREAKDOWN',
               align: 'center',
@@ -206,7 +206,7 @@ $(function () {
           },
           plotOptions: {
               pie: {
-                  borderColor: '#000000',
+                  borderWidth: 0,
                   allowPointSelect: true,
                   cursor: 'pointer',
                   dataLabels: {
@@ -233,7 +233,7 @@ $(function () {
             x: 5,
             y: 25
         },
-        colors: ['#000000', '#30385f', '#FFFFFF', '#D2ACAF'],
+        colors: ['#000000', '#792C63', '#FFFFFF', '#56AA9E'],
         xAxis: {
 
             categories: charts.stacked_bar.dates
