@@ -4,11 +4,24 @@ $dark: #e3e3e3;
 $medium: #ebebeb;
 $light: #f5f5f5;
 
+// font-family: 'Nunito', sans-serif;
+// font-family: 'Josefin Sans', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+
 //************************** CONTAINER ***************************************
 
 .content-wrapper {
   margin-bottom: 9vw;
   margin-top: 6vw;
+}
+
+.content-container {
+  background-color: $white;
+  font-family: 'Nunito', sans-serif;
+
+  p {
+    font-weight: 200;
+  }
 }
 
 //************************** NAVIGATION ***************************************
@@ -26,11 +39,30 @@ nav {
 //************************** JOURNAL ***************************************
 
 .dream {
-  height: 65vh;
-}
-
-.content-container {
-  background-color: $white;
+  height: 75vh;
+  overflow: auto;
+  padding-top: 20px;
 }
 
 //************************** JOURNAL ***************************************
+
+
+.timeline {
+  padding: 0;
+  background-color: $light;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .timeline {
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+} // min-width 641px, medium screens
+
+
+//************************** INTERNAL PAGES **********************************
+
+.inner-wrapper {
+  padding: 30px;
+}
