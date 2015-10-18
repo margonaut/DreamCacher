@@ -40,7 +40,10 @@ $(function () {
         },
         colors: ['#30385f'],
         title: {
-            text: 'DREAM SENTIMENT OVER TIME'
+            text: 'DREAM SENTIMENT OVER TIME',
+            align: 'center',
+            x: 5,
+            y: 25
         },
         subtitle: {
             text: ''
@@ -61,6 +64,16 @@ $(function () {
             },
             min: -1
         },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: 70,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+            borderWidth: 1
+        },
         tooltip: {
             headerFormat: '<b>{point.x:%b %e, %Y}</b><br>',
             pointFormat: '{point.y}'
@@ -76,6 +89,13 @@ $(function () {
 
         series: [{
             name: 'Dream Sentiment',
+            marker: {
+                    states: {
+                        hover: {
+                            fillColor: '#D2ACAF',
+                        }
+                    }
+                },
             data: timelineData
         }]
     });
@@ -87,7 +107,10 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: 'KEYWORD SCATTER'
+            text: 'KEYWORD SCATTER',
+            align: 'left',
+            x: 5,
+            y: 25
         },
         subtitle: {
             text: ''
@@ -152,12 +175,12 @@ $(function () {
         },
         series: [{
             name: 'Negative',
-            color: 'rgba(223, 83, 83, .5)',
+            color: 'rgba(119, 152, 191, .5)',
             data: charts.scatter_plot.negative
 
         }, {
             name: 'Positive',
-            color: 'rgba(119, 152, 191, .5)',
+            color: 'rgba(223, 83, 83, .5)',
             data: charts.scatter_plot.positive
         }, {
             name: 'Mixed',
@@ -173,7 +196,10 @@ $(function () {
           },
           colors: ['#D2ACAF', '#30385f'],
           title: {
-              text: 'DREAM SENTIMENT PROPORTION'
+              text: 'DREAM SENTIMENT BREAKDOWN',
+              align: 'center',
+              x: 5,
+              y: 25
           },
           tooltip: {
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -202,7 +228,10 @@ $(function () {
             backgroundColor: null
         },
         title: {
-            text: 'KEYWORD SENTIMENT PROPORTION'
+            text: 'STACKED KEYWORD SENTIMENT',
+            align: 'left',
+            x: 5,
+            y: 25
         },
         colors: ['#000000', '#30385f', '#FFFFFF', '#D2ACAF'],
         xAxis: {
