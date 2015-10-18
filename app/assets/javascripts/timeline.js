@@ -51,3 +51,11 @@ $(".dream-key").on("click", function(event) {
   var positivity = this.classList[0];
   toggleKeywords(string, positivity);
 });
+
+$(".expand").on("click", function(event) {
+  event.preventDefault();
+  var snippet = $(this).siblings('.snippet');
+  var fullText = $(this).siblings('.full-text');
+  fullText.toggleClass('hide');
+  snippet.toggleClass('hide');
+});
