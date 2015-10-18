@@ -6,7 +6,7 @@
   <h4>Themes</h4>
   <ul id="keyword-list">
     <% dream.dreams_keywords.each do |keyword|  %>
-      <li class="dream-key">
+      <li class="dream-key <%= keyword.positivity %>">
         <a href=""><%= keyword.keyword.text %></a>
       </li>
     <% end %>
