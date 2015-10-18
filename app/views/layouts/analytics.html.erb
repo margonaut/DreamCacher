@@ -10,11 +10,13 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
   <%= render "layouts/alerts" %>
-  <div class="navigation row">
-    <%= render "layouts/nav" %>
-  </div>
-  <div class="row">
-    <%= yield %>
+  <div class="content-wrapper">
+    <div class="navigation row">
+      <%= render "layouts/nav" %>
+    </div>
+    <div class="row style">
+      <%= yield %>
+    </div>
   </div>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>

@@ -9,6 +9,7 @@ $light: #F5F5F5;
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
 }
+//*************************** CHARTS ***************************************
 
 .chart {
   width: 100%;
@@ -22,14 +23,11 @@ $light: #F5F5F5;
   height: 367px;
 }
 
-.scatter {
-// style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto"
-}
-
 .timeline-chart {
   height: 288px;
-  // style="min-width: 310px; height: 400px; margin: 0 auto"
 }
+
+// ************************ GRID FORMATTING *********************************
 
 .fit {
   padding-top: 0;
@@ -48,6 +46,9 @@ $light: #F5F5F5;
 .light {
   background-color: $light;
 }
+
+// ************************ TEXT FORMATTING *********************************
+
 
 .heading {
   color: black;

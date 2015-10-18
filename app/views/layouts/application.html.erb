@@ -10,11 +10,11 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
   <%= render "layouts/alerts" %>
-  <div class="navigation row">
-    <%= render "layouts/nav" %>
-  </div>
-  <div class="row">
-    <div class="content-wrapper">
+  <div class="content-wrapper">
+    <div class="navigation row">
+      <%= render "layouts/nav" %>
+    </div>
+    <div class="row content-container">
       <%= yield %>
     </div>
   </div>
