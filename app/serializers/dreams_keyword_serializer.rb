@@ -1,6 +1,7 @@
 class DreamsKeywordSerializer < ActiveModel::Serializer
   attributes :text, :sentiment, :relevance, :date, :nice_date,
-             :mixed, :positive?, :negative?, :neutral?, :mixed?
+             :mixed, :positive?, :negative?, :neutral?, :mixed?,
+             :positivity
 
   def text
     object.keyword.text
@@ -43,6 +44,20 @@ class DreamsKeywordSerializer < ActiveModel::Serializer
       return true
     else
       return false
+    end
+  end
+
+  def positivity
+    if mixed?
+      "mixed"
+    elsif sentiment.to_f > 0
+      "positive"
+    elsif sentiment.to_f < 0
+      "negative"
+    elsif sentiment.to_f == 0
+      "neutral"
+    else
+      "problem"
     end
   end
 end

@@ -2,7 +2,7 @@ var replaceKeywords = function(keywords) {
   $(".dream-key").remove();
   var list = $("#keyword-list");
   for (var i = 0; i < keywords.length; i++) {
-    list.append("<li class=\"dream-key\">" + keywords[i].text + "</li>");
+    list.append("<li class=\"" + keywords[i]["positivity"] + " dream-key\">" + keywords[i].text + "</li>");
   }
 };
 
@@ -38,4 +38,24 @@ $(".details").on("click", function(event) {
   .done(function(data){
     changeDream(data.dream);
   });
+});
+
+$(".dream-key").on("click", function(event) {
+  event.preventDefault();
+  if(event.isDefaultPrevented()){
+      // default event is prevented
+  }else{
+      event.returnValue = false;
+  }
+  var string = this.textContent;
+  var positivity = this.classList[0];
+  toggleKeywords(string, positivity);
+});
+
+$(".expand").on("click", function(event) {
+  event.preventDefault();
+  var snippet = $(this).siblings('.snippet');
+  var fullText = $(this).siblings('.full-text');
+  fullText.toggleClass('hide');
+  snippet.toggleClass('hide');
 });

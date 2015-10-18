@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,300|Open+Sans:400,600,300);
 
-// font-family: 'Josefin Sans', sans-serif;
-// font-family: 'Open Sans', sans-serif;
+$oil: #333333;
+$medium: #ebebeb;
+$dark: #e3e3e3;
 
 html {
   text-rendering: optimizeLegibility;
@@ -16,6 +17,19 @@ body {
   -o-background-size: cover;
   background-size: cover;
   overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $dark;
 }
 
 /************** FIXES *******************************/
