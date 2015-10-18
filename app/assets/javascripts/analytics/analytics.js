@@ -184,7 +184,7 @@ $(function () {
             data: charts.scatter_plot.positive
         }, {
             name: 'Mixed',
-            color: 'rgba(150, 100, 160, .5)',
+            color: 'rgba(150, 100, 160, .9)',
             data: charts.scatter_plot.mixed
         }]
     });

@@ -17,6 +17,7 @@ gem 'json'
 gem 'active_model_serializers', '0.8.3'
 gem 'carrierwave'
 gem 'fog'
+gem 'font-awesome-rails'
 
 
 
