@@ -44,7 +44,25 @@ nav {
   padding-top: 20px;
 }
 
-//************************** JOURNAL ***************************************
+//************************** KEYWORDS ***************************************
+
+#keyword-list {
+  margin-left: -5px;
+
+  .dream-key {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  .dream-key a {
+    background-color: #DBDBDB;
+    border-radius: 2px;
+    padding: 2px;
+  }
+}
+
+
+//************************** TIMELINE ***************************************
 
 
 .timeline {
