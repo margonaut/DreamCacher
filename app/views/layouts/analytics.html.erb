@@ -14,9 +14,7 @@
     <%= render "layouts/nav" %>
   </div>
   <div class="row">
-    <div class="content-wrapper">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </div>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>

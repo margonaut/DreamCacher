@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
   def layout_by_resource
     if devise_controller? && !user_signed_in?
       "devise"
+    elsif params[:controller] == "analytics" && user_signed_in?
+      "analytics"
     else
       "application"
     end
