@@ -1,6 +1,30 @@
 $white: #ffffff;
 $purple: #30385f;
 
+$pink: #D4827D;
+
+.shared-links {
+  float: right;
+  padding: 7px;
+}
+
+.shared-links a {
+  font-size: 1.5rem;
+}
+
+.shared-links a:hover {
+  color: $pink;
+}
+
+
+.shared-links a::before {
+  content: " | ";
+}
+
+.shared-links a:first-child::before {
+  content: "";
+}
+
 .devise-background {
   background-image: url("http://i.imgur.com/WmKOzNn.png");
   background-position: center center;
@@ -34,7 +58,6 @@ $purple: #30385f;
     margin: 0;
   }
 }
-
 
 @media only screen and (min-width: 40.063em) {
   .devise-wrapper {

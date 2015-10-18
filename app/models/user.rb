@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def fake_username
+    user_info = self.email.split('@')
+    user_info[0]
+  end
+
   private
 
   def first_dream
