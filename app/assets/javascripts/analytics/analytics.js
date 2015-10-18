@@ -38,6 +38,7 @@ $(function () {
             type: 'spline',
             backgroundColor: null
         },
+        colors: ['#30385f'],
         title: {
             text: 'DREAM SENTIMENT OVER TIME'
         },
@@ -170,7 +171,7 @@ $(function () {
               plotShadow: false,
               type: 'pie'
           },
-          colors: ['#30385f', '#D2ACAF'],
+          colors: ['#D2ACAF', '#30385f'],
           title: {
               text: 'DREAM SENTIMENT PROPORTION'
           },
@@ -203,6 +204,7 @@ $(function () {
         title: {
             text: 'KEYWORD SENTIMENT PROPORTION'
         },
+        colors: ['#000000', '#30385f', '#FFFFFF', '#D2ACAF'],
         xAxis: {
 
             categories: charts.stacked_bar.dates
