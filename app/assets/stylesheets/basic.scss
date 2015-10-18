@@ -8,17 +8,14 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-.background {
-  background-color: #ADD8E6;
+body {
+  height: 100%;
+  background: url("http://i.imgur.com/WmKOzNn.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  display: flex;
-  flex-flow: column;
-  height: 100%;
   overflow: auto;
-  // background: url("http://www.wallpaperup.com/uploads/wallpapers/2012/09/26/16626/8155b41ae43140299c342079a2c134dd.jpg") no-repeat center center fixed;
 }
 
 /************** FIXES *******************************/

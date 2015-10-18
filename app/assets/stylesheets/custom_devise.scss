@@ -1,8 +1,30 @@
 $white: #ffffff;
 $purple: #30385f;
+$pink: #d4827d;
+
+.shared-links {
+  float: right;
+  padding: 7px;
+}
+
+.shared-links a {
+  font-size: 1.5rem;
+}
+
+.shared-links a:hover {
+  color: $pink;
+}
+
+.shared-links a::before {
+  content: " | ";
+}
+
+.shared-links a:first-child::before {
+  content: "";
+}
 
 .devise-background {
-  background-image: url("https://images.unsplash.com/photo-1429305336325-b84ace7eba3b?q=80&fm=jpg&s=8cf84b970497806cc96a06d6aba2b86b");
+  background-image: url("http://i.imgur.com/WmKOzNn.png");
   background-position: center center;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -34,7 +56,6 @@ $purple: #30385f;
     margin: 0;
   }
 }
-
 
 @media only screen and (min-width: 40.063em) {
   .devise-wrapper {

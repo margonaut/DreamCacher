@@ -1,0 +1,18 @@
+<div class="timeline panel medium-6 large-4 columns">
+  <section id="cd-timeline" class="cd-container">
+    <% if @dreams.empty? %>
+      <%= render partial: "empty_dream" %>
+    <% else %>
+      <%= render partial: "dream", collection: @dreams %>
+    <% end %>
+  	</section>
+</div>
+<div class="dream panel medium-6 large-8 columns show-for-medium-up">
+  <div class="row">
+    <% if @dreams.first.nil? %>
+      <h1>Your journal is empty!</h1>
+    <% else %>
+      <%= render partial: "active_dream", object: @dreams.first, as: :dream %>
+    <% end %>
+  </div>
+</div>

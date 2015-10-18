@@ -7,15 +7,18 @@
 
   <section class="top-bar-section">
     <ul class="left">
-        <% if current_user %>
-       <li><%= image_tag "#{current_user.avatar}", class: "avatar"%></li>
-       <% end %>
       <% if current_user %>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      <%- else -%>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-        <li><%= link_to 'Sign In', new_user_session_path %></li>
-      <%- end -%>
+        <li class="has-dropdown not-click">
+          <%= link_to "#" do %>
+            <%= image_tag "#{current_user.avatar}", class: "avatar" %>
+            <%= current_user.fake_username %>
+          <% end %>
+          <ul class="dropdown">
+          <li><%= link_to 'User Preferences', edit_user_registration_path %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+        </li>
+      <% end %>
       <li class="divider"></li>
       <li>
         <a href="/">Journal</a>

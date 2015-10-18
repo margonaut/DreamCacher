@@ -1,3 +1,11 @@
+Highcharts.setOptions({
+    chart: {
+        style: {
+            fontFamily: 'Nunito'
+        }
+    }
+});
+
 var dateParser = function(dateString) {
   var date = new Date(dateString);
   var newDate = Date.parse(date);
@@ -15,7 +23,6 @@ var formatDates = function(data) {
 
 $(function () {
   $('.analytics.index').ready(function () {
-
     $.ajax({
       method: 'GET',
       url: '/api/v1/analytics_dashboard',
@@ -28,10 +35,15 @@ $(function () {
       // Build the chart
       $('#timeline-container').highcharts({
         chart: {
-            type: 'spline'
+            type: 'spline',
+            backgroundColor: null
         },
+        colors: ['#30385f'],
         title: {
-            text: 'Dream Sentiment Over Time'
+            text: 'DREAM SENTIMENT OVER TIME',
+            align: 'center',
+            x: 5,
+            y: 25
         },
         subtitle: {
             text: ''
@@ -52,6 +64,16 @@ $(function () {
             },
             min: -1
         },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 100,
+            y: 70,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF',
+            borderWidth: 1
+        },
         tooltip: {
             headerFormat: '<b>{point.x:%b %e, %Y}</b><br>',
             pointFormat: '{point.y}'
@@ -67,6 +89,13 @@ $(function () {
 
         series: [{
             name: 'Dream Sentiment',
+            marker: {
+                    states: {
+                        hover: {
+                            fillColor: '#D2ACAF',
+                        }
+                    }
+                },
             data: timelineData
         }]
     });
@@ -74,10 +103,14 @@ $(function () {
       $('#scatter-container').highcharts({
         chart: {
             type: 'scatter',
-            zoomType: 'xy'
+            zoomType: 'xy',
+            backgroundColor: null
         },
         title: {
-            text: 'Keyword Scatter'
+            text: 'KEYWORD SCATTER',
+            align: 'left',
+            x: 5,
+            y: 25
         },
         subtitle: {
             text: ''
@@ -142,12 +175,12 @@ $(function () {
         },
         series: [{
             name: 'Negative',
-            color: 'rgba(223, 83, 83, .5)',
+            color: 'rgba(119, 152, 191, .5)',
             data: charts.scatter_plot.negative
 
         }, {
             name: 'Positive',
-            color: 'rgba(119, 152, 191, .5)',
+            color: 'rgba(223, 83, 83, .5)',
             data: charts.scatter_plot.positive
         }, {
             name: 'Mixed',
@@ -157,19 +190,23 @@ $(function () {
     });
       $('#pie-container').highcharts({
           chart: {
-              plotBackgroundColor: null,
-              plotBorderWidth: null,
+              backgroundColor: null,
               plotShadow: false,
               type: 'pie'
           },
+          colors: ['#D2ACAF', '#30385f'],
           title: {
-              text: 'Dream Sentiment'
+              text: 'DREAM SENTIMENT BREAKDOWN',
+              align: 'center',
+              x: 5,
+              y: 25
           },
           tooltip: {
               pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
           },
           plotOptions: {
               pie: {
+                  borderColor: '#000000',
                   allowPointSelect: true,
                   cursor: 'pointer',
                   dataLabels: {
@@ -187,11 +224,16 @@ $(function () {
 
       $('#stacked-bar-container').highcharts({
         chart: {
-            type: 'bar'
+            type: 'bar',
+            backgroundColor: null
         },
         title: {
-            text: 'Keyword Sentiment Proportion'
+            text: 'STACKED KEYWORD SENTIMENT',
+            align: 'left',
+            x: 5,
+            y: 25
         },
+        colors: ['#000000', '#30385f', '#FFFFFF', '#D2ACAF'],
         xAxis: {
 
             categories: charts.stacked_bar.dates
