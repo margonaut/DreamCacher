@@ -14,6 +14,31 @@ class User < ActiveRecord::Base
     user_info[0]
   end
 
+  def total_keyword_count
+    total = 0
+    dreams.each do |dream|
+      total += dream.keyword_count
+    end
+    total
+  end
+
+  def average_word_count
+    total = 0
+    dreams.each do |dream|
+      total += dream.text.split.count
+    end
+    average = total/dreams.count
+  end
+
+  def average_dream_sentiment
+    total = 0
+    dreams.each do |dream|
+      total += dream.sentiment.to_f
+    end
+    average = total/dreams.count
+    average.round(3)
+  end
+
   private
 
   def first_dream

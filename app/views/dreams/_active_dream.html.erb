@@ -1,17 +1,22 @@
-<div class="columns">
+<div class="columns body-content">
   <h1 id="dream-title"><%= dream.title %></h1>
   <p id="dream-text"><%= dream.text %></p>
 </div>
-<div class="columns">
-  <h4>Themes</h4>
+<div class="large-3 columns info-segment">
+  <p class="fancy">Sentiment</p>
+  <span id="dream-sentiment"><%= dream.sentiment %></span>
+</div>
+<div class="large-9 columns info-segment">
+  <p class="fancy">Keywords</p>
   <ul id="keyword-list">
     <% dream.dreams_keywords.each do |keyword|  %>
       <li class="<%= keyword.positivity %> dream-key"><%= keyword.keyword.text %></li>
     <% end %>
   </ul>
 </div>
-<div class="columns">
+<div class="columns text-right">
   <p>
-    <%= link_to "Edit", edit_dream_path(dream), id: "edit-link" %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link" %>
+    <%= link_to "Edit", edit_dream_path(dream), id: "edit-link", class: "tiny secondary button" %>
+    <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link", class: "tiny secondary button" %>
   </p>
 </div>

@@ -1,0 +1,32 @@
+<div class="dark row">
+  <div class="small-6 columns">
+    <p class="fancy">DREAMS</p>
+  </div>
+  <div class="small-6 columns text-right">
+    <p class="fancy accent-text"><%= @dreams.count %></p>
+  </div>
+</div>
+<div class="medium row">
+  <div class="small-6 columns fit">
+    <p class="fancy">KEYWORDS</p>
+  </div>
+  <div class="small-6 columns text-right">
+    <p class="fancy accent-text"><%= current_user.total_keyword_count %></p>
+  </div>
+</div>
+<div class="dark row">
+  <div class="small-6 columns">
+    <p class="fancy">AVG. SENTIMENT</p>
+  </div>
+  <div class="small-6 columns text-right">
+    <p class="fancy accent-text"><%= current_user.average_dream_sentiment %></p>
+  </div>
+</div>
+<div class="medium row">
+  <div class="small-6 columns">
+    <p class="fancy">AVG. WORDS</p>
+  </div>
+  <div class="small-6 columns text-right">
+    <p class="fancy accent-text"><%= current_user.average_word_count %></p>
+  </div>
+</div>

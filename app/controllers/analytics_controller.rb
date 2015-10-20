@@ -1,6 +1,8 @@
 class AnalyticsController < ApplicationController
   before_action :require_login
+  
   def index
+    @dreams = Dream.where(user: current_user).order(:date).reverse_order
   end
 
   private

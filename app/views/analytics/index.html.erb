@@ -1,59 +1,32 @@
-<div class="row collapse heading">
-  <div class="large-4 columns fit">
-    <div class="dark row">
-      <div class="small-6 columns">
-        <p class="fancy">DREAMS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">36</p>
-      </div>
+<% if @dreams.empty? %>
+  <div class="panel">
+    <h3>To see analytics results, add a dream.</h3>
+  </div>
+<% else %>
+  <div class="row collapse heading">
+    <div class="large-4 columns fit">
+      <%= render "dream_info" %>
     </div>
-    <div class="medium row">
-      <div class="small-6 columns fit">
-        <p class="fancy">KEYWORDS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">344</p>
-      </div>
-    </div>
-    <div class="dark row">
-      <div class="small-6 columns">
-        <p class="fancy">AVG. SENTIMENT</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">0.398</p>
-      </div>
-    </div>
-    <div class="medium row">
-      <div class="small-6 columns">
-        <p class="fancy">AVG. WORDS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">246</p>
-      </div>
+    <div class="white large-8 columns fit">
+      <div class="timeline-chart chart" id="timeline-container"></div>
     </div>
   </div>
-  <div class="white large-8 columns fit">
-    <div class="timeline-chart chart" id="timeline-container"></div>
-  </div>
-</div>
 
-<div class="row collapse">
-  <div class="large-4 columns fit light">
-    <div class="stacked-bar chart" id="stacked-bar-container"></div>
-  </div>
-  <div class="medium large-8 columns fit">
-    <div class="row collapse">
-      <div class="show-for-large-up large-6 columns">
-        <div class="picture">
+  <div class="row collapse">
+    <div class="large-4 columns fit light">
+      <div class="stacked-bar chart" id="stacked-bar-container"></div>
+    </div>
+    <div class="medium large-8 columns fit">
+      <div class="row collapse">
+        <div class="show-for-large-up large-6 columns">
+        </div>
+        <div class="medium large-6 columns fit">
+          <div class="pie chart" id="pie-container"></div>
         </div>
       </div>
-      <div class="medium large-6 columns fit">
-        <div class="pie chart" id="pie-container"></div>
+      <div class="white row collapse">
+        <div class="scatter chart" id="scatter-container"></div>
       </div>
     </div>
-    <div class="white row collapse">
-      <div class="scatter chart" id="scatter-container"></div>
-    </div>
   </div>
-</div>
+<% end %>

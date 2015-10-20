@@ -147,10 +147,19 @@ $darkgrey: #b9b9b9;
   z-index: 2;
 }
 
+.photo-area {
+  text-align: -webkit-center;
+
+  img {
+    height: 25vmax;
+  }
+}
+
 @media only screen and (min-width: 40.063em) {
 
   .text-content {
     padding-top: 70px;
+  }
 
     h3 {
       font-size: 4vh;
@@ -159,11 +168,11 @@ $darkgrey: #b9b9b9;
     p {
       font-size: 2vh;
     }
-  }
 
-  .medium-img {
-    padding-top: 2.3em;
-  }
+    .slide-img {
+      padding-top: 2.3em;
+    }
+
 }
 
 // *************************** UPPER NAV **************************************

@@ -4,7 +4,16 @@
   <div class="cd-timeline-content">
       <h2><%= dream.title %></h2>
     <p class="snippet"><%= dream.snippet %></p>
-    <p class="full-text hide"><%= dream.text %></p>
+    <div class="full-text hide">
+      <p><%= dream.text %></p>
+      <div class="info-segment">
+        <p>Sentiment: <%= dream.sentiment %></p>
+      </div>
+      <div>
+          <%= link_to "Edit", edit_dream_path(dream), id: "edit-link", class: "tiny secondary button" %>
+          <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link", class: "tiny secondary button" %>
+      </div>
+    </div>
     <a href="" class="details cd-read-more show-for-medium-up" id="<%= dream.id %>">Details</a>
     <a href="" class="expand cd-read-more show-for-small-only">Expand</a>
     <span class="cd-date"><%= dream.date.strftime("%m/%d/%Y") %></span>
