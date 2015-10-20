@@ -1,37 +1,10 @@
 <div class="row collapse heading">
   <div class="large-4 columns fit">
-    <div class="dark row">
-      <div class="small-6 columns">
-        <p class="fancy">DREAMS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">36</p>
-      </div>
-    </div>
-    <div class="medium row">
-      <div class="small-6 columns fit">
-        <p class="fancy">KEYWORDS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">344</p>
-      </div>
-    </div>
-    <div class="dark row">
-      <div class="small-6 columns">
-        <p class="fancy">AVG. SENTIMENT</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">0.398</p>
-      </div>
-    </div>
-    <div class="medium row">
-      <div class="small-6 columns">
-        <p class="fancy">AVG. WORDS</p>
-      </div>
-      <div class="small-6 columns text-right">
-        <p class="fancy accent-text">246</p>
-      </div>
-    </div>
+    <% if @dreams.empty? %>
+      <h2>To see analytics results, add a dream.</h2>
+    <% else %>
+      <%= render "dream_info" %>
+    <% end %>
   </div>
   <div class="white large-8 columns fit">
     <div class="timeline-chart chart" id="timeline-container"></div>

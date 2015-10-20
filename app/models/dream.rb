@@ -21,6 +21,10 @@ class Dream < ActiveRecord::Base
     end
   end
 
+  def keyword_count
+    dreams_keywords.count
+  end
+
   def positivity
     if mixed?
       "mixed"
