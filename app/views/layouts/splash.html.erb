@@ -11,54 +11,7 @@
 <body>
   <%= render "layouts/alerts" %>
   <%= render "homes/uppernav" %>
-  <section class="top">
-    <div class="title-box">
-      <h1 class="title">DREAMCACHER</h1>
-      <h2 class="title subtitle">data visualization + dream journal</h2>
-    <%= link_to 'get started', new_user_registration_path, class: "action button" %>
-    </div>
-  </section>
-  <section class="bottom">
-    <div class="row demo-row">
-      <div class="arrow" id="arrow-left">
-        <span>❮</span>
-      </div>
-      <div class="arrow" id="arrow-right">
-        <span>❯</span>
-      </div>
-        <div class="slide analytics-slide">
-          <div class="columns small-12 medium-6 text-content">
-            <h3>Dream Analytics</h3>
-            <p>Significant patterns in your dreams are revealed in the analytics dashboard.</p>
-          </div>
-          <div class="columns small-12 medium-6">
-            <img class="show-for-small-only" src="http://placehold.it/350x150">
-            <img class="show-for-medium-up medium-img" src="http://i.imgur.com/igijvAV.png">
-          </div>
-        </div>
-        <div class="slide timeline-slide current">
-          <div class="columns small-12 medium-6 text-content">
-            <h3>Mobile Friendly</h3>
-            <p>Dreams are best remembered upon waking. Record your dreams instantly from your bed with your smartphone.</p>
-          </div>
-          <div class="columns small-12 medium-6 text">
-            <img class="show-for-small-only" src="http://placehold.it/350x150">
-            <img class="show-for-medium-up medium-img" src="http://i.imgur.com/SDojnZI.png" style="padding-left:30px;">
-          </div>
-        </div>
-        <div class="slide recording-slide">
-          <div class="columns small-12 medium-6 text-content">
-            <h3>Journal Timeline</h3>
-            <p>Easily navigate your journal via a responsive timeline.</p>
-          </div>
-          <div class="columns small-12 medium-6">
-            <img class="show-for-small-only" src="http://placehold.it/350x150">
-            <img class="show-for-medium-up medium-img" src="http://i.imgur.com/eNNg2lm.png">
-          </div>
-        </div>
-    </div>
-  </section>
-
+  <%= yield %>
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
 </body>

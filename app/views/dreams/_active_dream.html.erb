@@ -1,12 +1,12 @@
-<div class="columns" style="min-height: 45vh;">
+<div class="columns body-content">
   <h1 id="dream-title"><%= dream.title %></h1>
   <p id="dream-text"><%= dream.text %></p>
 </div>
-<div class="large-3 columns" style="border-top:2px solid #EBEBEB;">
+<div class="large-3 columns info-segment">
   <p class="fancy">Sentiment</p>
   <span id="dream-sentiment"><%= dream.sentiment %></span>
 </div>
-<div class="large-9 columns" style="border-top:2px solid #EBEBEB;">
+<div class="large-9 columns info-segment">
   <p class="fancy">Keywords</p>
   <ul id="keyword-list">
     <% dream.dreams_keywords.each do |keyword|  %>
