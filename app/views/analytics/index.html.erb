@@ -1,32 +1,34 @@
-<div class="row collapse heading">
-  <div class="large-4 columns fit">
-    <% if @dreams.empty? %>
-      <h2>To see analytics results, add a dream.</h2>
-    <% else %>
+<% if @dreams.empty? %>
+  <div class="panel">
+    <h3>To see analytics results, add a dream.</h3>
+  </div>
+<% else %>
+  <div class="row collapse heading">
+    <div class="large-4 columns fit">
       <%= render "dream_info" %>
-    <% end %>
+    </div>
+    <div class="white large-8 columns fit">
+      <div class="timeline-chart chart" id="timeline-container"></div>
+    </div>
   </div>
-  <div class="white large-8 columns fit">
-    <div class="timeline-chart chart" id="timeline-container"></div>
-  </div>
-</div>
 
-<div class="row collapse">
-  <div class="large-4 columns fit light">
-    <div class="stacked-bar chart" id="stacked-bar-container"></div>
-  </div>
-  <div class="medium large-8 columns fit">
-    <div class="row collapse">
-      <div class="show-for-large-up large-6 columns">
-        <div class="picture">
+  <div class="row collapse">
+    <div class="large-4 columns fit light">
+      <div class="stacked-bar chart" id="stacked-bar-container"></div>
+    </div>
+    <div class="medium large-8 columns fit">
+      <div class="row collapse">
+        <div class="show-for-large-up large-6 columns">
+          <div class="picture">
+          </div>
+        </div>
+        <div class="medium large-6 columns fit">
+          <div class="pie chart" id="pie-container"></div>
         </div>
       </div>
-      <div class="medium large-6 columns fit">
-        <div class="pie chart" id="pie-container"></div>
+      <div class="white row collapse">
+        <div class="scatter chart" id="scatter-container"></div>
       </div>
     </div>
-    <div class="white row collapse">
-      <div class="scatter chart" id="scatter-container"></div>
-    </div>
   </div>
-</div>
+<% end %>

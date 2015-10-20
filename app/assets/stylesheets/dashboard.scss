@@ -21,6 +21,10 @@ $inactive-mixed: rgba(255, 165, 0, 0.4);
 .content-wrapper {
   margin-bottom: 9vw;
   margin-top: 6vw;
+
+  h1, h2, h3, h4 {
+    font-family: "Open Sans", sans-serif;
+  }
 }
 
 .content-container {
