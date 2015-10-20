@@ -15,8 +15,10 @@ var changeDream = function(dream) {
   var keywords = dream.dreams_keywords;
   var dreamTitle = $("#dream-title");
   var dreamText = $("#dream-text");
+  var dreamSentiment = $("#dream-sentiment");
   dreamTitle.text(dream.title);
   dreamText.text(dream.text);
+  dreamSentiment.text(dream.sentiment);
   replaceKeywords(keywords);
   replaceLinks(dream.id);
 };

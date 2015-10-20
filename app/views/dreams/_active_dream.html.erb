@@ -2,20 +2,21 @@
   <h1 id="dream-title"><%= dream.title %></h1>
   <p id="dream-text"><%= dream.text %></p>
 </div>
-  <div class="large-3 columns" style="border-top:2px solid #EBEBEB;">
-    <p class="fancy">Sentiment</p>
-    <%= dream.sentiment %>
-  </div>
-  <div class="large-9 columns" style="border-top:2px solid #EBEBEB;">
-    <p class="fancy">Keywords</p>
-    <ul id="keyword-list">
-      <% dream.dreams_keywords.each do |keyword|  %>
-        <li class="<%= keyword.positivity %> dream-key"><%= keyword.keyword.text %></li>
-      <% end %>
-    </ul>
-  </div>
-<div class="columns">
+<div class="large-3 columns" style="border-top:2px solid #EBEBEB;">
+  <p class="fancy">Sentiment</p>
+  <span id="dream-sentiment"><%= dream.sentiment %></span>
+</div>
+<div class="large-9 columns" style="border-top:2px solid #EBEBEB;">
+  <p class="fancy">Keywords</p>
+  <ul id="keyword-list">
+    <% dream.dreams_keywords.each do |keyword|  %>
+      <li class="<%= keyword.positivity %> dream-key"><%= keyword.keyword.text %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="columns text-right">
   <p>
-    <%= link_to "Edit", edit_dream_path(dream), id: "edit-link" %> | <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link" %>
+    <%= link_to "Edit", edit_dream_path(dream), id: "edit-link", class: "tiny secondary button" %>
+    <%= link_to 'Delete Dream', dream_path(dream), method: :delete, id: "delete-link", class: "tiny secondary button" %>
   </p>
 </div>
