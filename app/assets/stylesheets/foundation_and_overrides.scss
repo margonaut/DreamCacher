@@ -1443,6 +1443,7 @@ $topbar-link-text-transform: uppercase;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: scale-color($primary-color, $lightness: -18%);;
 // $topbar-dropdown-bg: scale-color($primary-color, $lightness: -14%);
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
@@ -1459,6 +1460,7 @@ $topbar-dropdown-link-bg-hover: scale-color($primary-color, $lightness: -8%);
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
+// $topbar-dropdown-label-bg: $oil;
 // $topbar-dropdown-label-bg: $oil;
 
 // Top menu icon styles
