@@ -9,9 +9,6 @@ module Api
 
       private
 
-      # def dashboard
-      #   @_dashboard ||= AnalyticsDashboardOrganizer.new(@dreams)
-      # end
     end
   end
 end
