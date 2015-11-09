@@ -14,17 +14,12 @@ describe DreamSerializer do
     it 'has a true or false mixed value' do
       expect(serialized_json['dream']['mixed']).to eql(attributes[:mixed])
     end
-
-    it 'has a true or false positive? value' do
-      expect(serialized_json['dream']['positive?']).to eql(attributes[:positive?])
-    end
   end
 end
 
 def dream_attributes(dream)
   {
     user_email: dream.user.email,
-    mixed: false,
-    positive?:
+    mixed: false
   }
 end
