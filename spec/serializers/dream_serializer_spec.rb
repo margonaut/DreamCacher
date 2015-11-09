@@ -24,6 +24,7 @@ end
 def dream_attributes(dream)
   {
     user_email: dream.user.email,
-    mixed: false
+    mixed: false,
+    positive?:
   }
 end

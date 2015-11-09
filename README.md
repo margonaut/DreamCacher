@@ -20,21 +20,21 @@ DreamCacher is a data visualization-based dream journal. After running dreams th
 ## Get Started
 1. Bundle the gems
 
-  ```bundle```
+  bundle
 
 2. Bootup the database:
 
-  ```rake db:create```
+  rake db:create
 
 3. Bring in your migrations
 
-  ```rake db:migrate```
+  rake db:migrate
 
 4. Add Amazon Web Services keys, AlchemyAPI key, and S3 bucket name to the example.env file. Rename to ".env"
 
 5. Run the test suite
 
-  ```rake```
+  rake
 
 ## Deployment
 On a clean Master branch, run:
