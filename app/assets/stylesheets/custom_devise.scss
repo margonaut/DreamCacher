@@ -2,6 +2,8 @@ $white: #ffffff;
 $purple: #30385f;
 $pink: #d4827d;
 
+//*************************** SHARED LINKS **********************************
+
 .shared-links {
   float: right;
   padding: 7px;
@@ -23,6 +25,8 @@ $pink: #d4827d;
   content: "";
 }
 
+//*************************** BODY ***************************************
+
 .devise-background {
   background-image: url("http://i.imgur.com/WmKOzNn.png");
   background-position: center center;
@@ -38,6 +42,8 @@ $pink: #d4827d;
 .devise-wrapper {
   margin: 0 auto;
 }
+
+//*************************** CONTENT AREA ***********************************
 
 .devise-content {
   background-color: $white;

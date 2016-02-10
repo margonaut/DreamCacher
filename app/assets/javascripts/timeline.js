@@ -60,4 +60,5 @@ $(".expand").on("click", function(event) {
   var fullText = $(this).siblings('.full-text');
   fullText.toggleClass('hide');
   snippet.toggleClass('hide');
+  this.innerHTML = (this.innerHTML == 'Expand') ? 'Hide' : 'Expand' ;
 });
